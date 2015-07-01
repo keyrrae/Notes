@@ -3,14 +3,19 @@
 
 ###Typing Model
 Strong(Java) or weak(C)
+
 Static(Java) or dynamic(Ruby)
 
 
 ###Programming Model
-Object-oriented: Rubym Scala
+Object-oriented: Ruby Scala
+
 Functional:Scala, Erlang, Clojure, Haskell
+
 Procedural
+
 hybrid: Scala
+
 logic-based: Prolong
 
 ###Interaction
@@ -21,6 +26,7 @@ Virtual Machines
 
 ###Decision and Data Structures
 Pattern matching in Erlang
+
 unification in Prolog
 
 Collections
@@ -30,7 +36,9 @@ Collections
 ## Ruby
 
 EncapsulationL data and behaviro are packaged together
+
 Inheritance: object types are organized in a class tree
+
 polymophism: objects can take many forms
 
 ```Ruby
@@ -46,6 +54,7 @@ polymophism: objects can take many forms
 ```
 
 One quote around a string means interpreted literally
+
 Two quotes leads to string evaluation.
 
 Pure OO language
@@ -65,6 +74,24 @@ Pure OO language
 >> puts '...' if x == 4
 >> if x == 4
 >> 	puts '...'
+>> end
+
+
+>> unless x == 4
+>>	puts '...'
+>> else
+?>	puts '...'
+>> end
+>>
+>> not true
+=> false
+>> !true
+=> false
+>> x = x + 1 while x < 10
+>> x = x - 1 until x = 1
+>> while x < 10
+>>	x = x + 1
+>>	put x
 >> end
 ```
 
