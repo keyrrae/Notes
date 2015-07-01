@@ -95,5 +95,55 @@ Pure OO language
 >> end
 ```
 
+Everything but `nil` and `false` evaluate to `true`.
+
+0 is `true` !!!
+
+`and`  `&&`
+
+`or`  `||`
+
+`not`  `!`
+
+### Duck Typing
+Ruby is strong typed.
+
+Get an error message when types collide at run time.
+
+*Dynamic Typing*
+
+Ruby does not do type checking until execution.
+
+
+```Ruby
+>> 4.class
+=> Fixnum
+>> (4.0).class
+=> Float
+
+>> 4 + 4.0
+=> 8.0
+
+>> 4 + 'four'
+TypeError: ...
+
+```
+
+*Duck Typing*
+
+```Ruby
+i = 0
+a = ['100', 100.0]
+while i < 2
+	puts a[i].to_i
+	i = i + 1
+end
+
+100
+100
+```
+
+Duck typing doesn't care what the underlying type might be
+
 ## Clojure
 
