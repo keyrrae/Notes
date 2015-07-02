@@ -157,3 +157,46 @@ Duck typing doesn't care what the underlying type might be
 (if (< meaning-of-life 0) "negative" "non-negative")
 "non-negative"
 ```
+Vector:[]
+
+Starts with index 0
+```Clojure
+(def droids ["Huey","Dewey","Louie"])
+(count droids)
+3
+(droids 0)
+"Huey"
+(droids 2)
+"Louie"
+```
+
+Map:{}
+
+```Clojure
+(def me {:name "Paul" :age 45 :sex :male})
+(:age me)
+45
+```
+
+function `defn`, with arguments specified as a vector:
+
+```Clojure
+(defn percentage [x p] (* x (/ p 100.0)))
+(percentage 200 10)
+20.0
+```
+```java
+public int sum(int[] numbers){
+	int accumulator = 0;
+	for (int n:numbers)
+		accumulator += n;
+	return accumulator;
+}
+```
+
+```clojure
+(defn recursive-sum [numbers]
+	(if (empty? numbers)
+		0
+		(+ (first numbers) (recursive-sum (rest numbers)))))
+```
