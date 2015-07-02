@@ -146,4 +146,14 @@ end
 Duck typing doesn't care what the underlying type might be
 
 ## Clojure
+*s-expressions*
 
+```Clojure
+(max 3 5)
+5
+(+ 1 (* 2 3))
+7
+(def meaning-of-life 42)
+(if (< meaning-of-life 0) "negative" "non-negative")
+"non-negative"
+```
