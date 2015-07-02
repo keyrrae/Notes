@@ -1,4 +1,11 @@
 ```
+$ git config --global user.name "YOUR NAME"
+$ git config --global user.email "YOUR EMAIL ADDRESS"
+```
+
+
+
+```
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 # Creates a new ssh key, using the provided email as a label
 # Generating public/private rsa key pair.
@@ -14,7 +21,7 @@ $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 
 ```
-ssh -T git@github.com
+$ ssh -T git@github.com
 # Attempts to ssh to GitHub
 # The authenticity of host 'github.com (207.97.227.239)' can't be established.
 # RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
@@ -24,5 +31,10 @@ ssh -T git@github.com
 
 ```
 
-
+```
+$ git clone git@github.com:keyrrae/Notes.git
+$ git add 
+$ git commit
+$ git push origin master
+```
 
