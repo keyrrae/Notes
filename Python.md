@@ -69,3 +69,13 @@ class ProductTestCase(unittest.TestCase):
 
 if __name__ == '__main__': unittest.main()
 ```
+##Profiling
+Premature optimization is the root of all evil.
+--Professor Sir Charles Anthony Richard Hoare, inventor of QuickSort
+
+>>> import profile
+>>> from my_math import product
+>>> profile.run('product(1, 2)')
+
+>>> import pstats
+>>> p = pstats.Stats('my_math.profile')
