@@ -73,9 +73,13 @@ if __name__ == '__main__': unittest.main()
 Premature optimization is the root of all evil.
 --Professor Sir Charles Anthony Richard Hoare, inventor of QuickSort
 
+```python
 >>> import profile
 >>> from my_math import product
 >>> profile.run('product(1, 2)')
+```
 
+```python
 >>> import pstats
 >>> p = pstats.Stats('my_math.profile')
+```
