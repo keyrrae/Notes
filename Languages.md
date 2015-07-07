@@ -263,3 +263,74 @@ No instance for (Num [Char])
 arising from a use of `+' at <interactive>:1:0-8
 ...
 ```
+
+Type inference `:t`
+```Haskell
+Prelude> :t 5
+5 :: (Num t) =>t
+```
+
+Turn on the type inference option
+```Haskell
+Prelude> :set +t
+
+Prelude> 5
+5
+it :: Integer
+
+Prelude> 5.0
+5.0
+it :: Double
+
+Prelude> "hello"
+"hello"
+it :: [Char]
+
+Prelude> (5 == (2 + 3))
+True
+it :: Bool
+```
+
+`let`: binds a variable to a function in a local scope
+```Haskell
+Prelude> let x = 10
+
+Prelude> x
+10
+
+Prelude> let double x = x * 2
+
+Prelude> double 2
+4
+```
+
+Specifying type
+```Haskell
+module Main where
+	double :: Integer -> Integer
+	double x = x +x
+```
+```Haskell
+Prelude> :load double.hs
+[1 of 1] Compiling Main ( double.hs, interpreted)
+Ok, modules loaded: Main.
+*Main> double 5
+10
+
+*Main> :t double
+double :: Integer -> Integer
+```
+
+Recursion
+```Haskell
+Prelude> let fact x = if x == 0 then 1 else fact (x - 1) * x
+Prelude> fact 3
+6
+```
+
+```Haskell
+module Main where
+	factorial :: Integer -> Integer
+	factorial 0 = 1
+	factorial x = x * factorial (x - 1)
+```
