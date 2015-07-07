@@ -201,12 +201,65 @@ public int sum(int[] numbers){
 		(+ (first numbers) (recursive-sum (rest numbers)))))
 ```
 ##Haskell
+
+Concatenate with ++ instead of +
+
 ```Haskell
 
 Prelude> "Hello"
 "Hello"
 Prelude> "Hello" + "world"
 
+<interactive>:1:0:
+No instance for (Num [Char])
+arising from a use of `+' at <interactive>:1:0-17
+Possible fix: add an instance declaration for (Num [Char])
+In the expression: "hello" + " world"
+In the definition of `it': it = "hello" + " world"
+
 Prelude> "Hello" ++ "world"
 "Hello world"
+```
 
+Chars and string
+
+A string is just a list of characters
+
+```Haskell
+Prelude> 'a'
+'a'
+Prelude> ['a','b']
+"ab"
+```
+
+Booleans
+
+`True` and `False`
+
+In Haskell, `if` is a function, not a control structure. It returns a value just like any other function.
+
+```Haskell
+Prelude> if (5 == 5) then "true"
+
+<interactive>:1:23: parse error (possibly incorrect indentation)
+
+Prelude> if (5 == 5) then "true" else "false"
+"true"
+```
+
+Haskell is strong typed, `if` takes strictly boolean types.
+```Haskell
+Prelude> if 1 then "true" else "false"
+
+<interactive>:1:3:
+No instance for (Num Bool)
+arising from the literal `1' at <interactive>:1:3
+...
+
+Prelude> "one" +1
+
+<interactive>:1:0:
+No instance for (Num [Char])
+arising from a use of `+' at <interactive>:1:0-8
+...
+```
