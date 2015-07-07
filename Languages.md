@@ -200,3 +200,13 @@ public int sum(int[] numbers){
 		0
 		(+ (first numbers) (recursive-sum (rest numbers)))))
 ```
+##Haskell
+```Haskell
+
+Prelude> "Hello"
+"Hello"
+Prelude> "Hello" + "world"
+
+Prelude> "Hello" ++ "world"
+"Hello world"
+
