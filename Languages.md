@@ -145,6 +145,81 @@ end
 
 Duck typing doesn't care what the underlying type might be
 
+###Defining Functions
+
+We don't have to build a whole class to define a function(Unlike in Java).
+
+Every function returns something. If we do not explicitly return something,
+the function will return the value of the last expression.
+
+Function is an object. Functions can be passed to other functions as parameters.
+
+```Ruby
+>> def tell_the_truth
+>> 		true
+>> end
+```
+
+###Arrays
+
+```Ruby
+>> animals = ['lions', 'tigers', 'bears']
+=> ['lions', 'tigers', 'bears']
+
+>> puts animals
+lions
+tigers
+bears
+=> nil
+
+>> animals[0]
+=> "lions"
+
+>> animals[10]
+=> nil
+
+>> animals[-1]
+=> "bears"
+
+>> animals[0..1]
+=> ['lions','tigers']
+
+>> (0..1).class
+=> Range
+```
+Arrays don't need to be homogeneous:
+```Ruby
+>> a = ["zero", 1, ["two", "thins"]]
+=> ["zero", 1, ["two", "thins"]]
+```
+
+Multidimentional array:
+```Ruby
+>> a = [[1, 2, 3], [10, 20, 30], [40, 50, 60]]
+=> [[1, 2, 3], [10, 20, 30], [40, 50, 60]]
+
+>> a[0][0]
+=> 1
+
+>> a[1][2]
+=> 30
+```
+
+###Hashes
+```Ruby
+>> numbers = {1 => 'one', 2 => 'two'}
+=> {1 => 'one', 2 => 'two'}
+
+>> numbers[1]
+=> 'one'
+
+>> stuff = {:array => [1, 2, 3], :string => 'Hi, mom!'}
+=> {:array => [1, 2, 3], :string => "Hi, mom!"}
+
+>> stuff[:string]
+=> "Hi, mom!"
+```
+
 ## Clojure
 *s-expressions*
 
