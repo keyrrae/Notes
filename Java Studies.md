@@ -59,8 +59,17 @@ Java 7 has a new try with resources statement that you can use to automatically 
     }
 ```
 
+##public private protected
+
 ##Constructors and polymorphism
 
 ###Order of constructor calls
 
-    
+1. The base-class constructor is called, followed by the next-derived class, etc.,
+recursively until the most-derived class is reached.
+
+2. Member initializers are called in the order of declaration.
+
+3. The body of the derived-class constructor is called.
+
+###Inheritance and cleanup
