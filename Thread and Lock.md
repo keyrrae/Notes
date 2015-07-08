@@ -31,9 +31,9 @@ but a concurrent solution can be simpler and clearer than its sequential equival
 locking conditions apply only to data that is both shared between threads and might
 change—in other words *shared mutable state*.
 
-Data that doesn’t change (is
-immutable) can be accessed by multiple threads without any kind of locking.
-	
+Data that doesn’t change (is immutable) can be accessed by multiple threads without any kind of locking.
+
+```java
 	public class HelloWorld {
 		public static void main(String[] args) throws InterruptedException {
 			Thread myThread = new Thread() {
@@ -47,21 +47,21 @@ immutable) can be accessed by multiple threads without any kind of locking.
 			myThread.join();
 		}
 	}
+```
 
-
-Thread.yield():
+`Thread.yield()`:
 A hint to the scheduler that the current thread is willing to yield its current use of a
 processor.
 
 Race condition
 behavior that depends on the relative timing of operations
 
-
+```java
 	class Counter {
 		private int count = 0;
 		public synchronized void increment() { ++count;}
 		public int getCount() {return count;}
 	}
-
+```
 
 GitTest

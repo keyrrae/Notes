@@ -1,5 +1,5 @@
 ##Modern Java
-In modern java, `HashMap` is used to replace `Hashtable`, and `ArrayList` is used to replace `Stack`. 
+In modern java, `HashMap` is used to replace `Hashtable`, and `ArrayList` is used to replace `Stack`.
 
 ##`final`, `finally` and `finalize`
 ###`final`
@@ -57,3 +57,10 @@ Java 7 has a new try with resources statement that you can use to automatically 
       //free resources (e.g. unallocate memory)
       super.finalize();
     }
+```
+
+##Constructors and polymorphism
+
+###Order of constructor calls
+
+    

@@ -41,13 +41,13 @@ Inheritance: object types are organized in a class tree
 
 polymophism: objects can take many forms
 
-```Ruby
+```ruby
 >> properties = ['object oriented', 'duck typed', 'productive', 'fun']
 >> properties.each {|| puts "Ruby is #{property}"}
 
 ```
 
-```Ruby
+```ruby
 >> puts 'hello, world'
 >> language = 'Ruby'
 >> puts "hello, #{language}"
@@ -58,7 +58,7 @@ One quote around a string means interpreted literally
 Two quotes leads to string evaluation.
 
 Pure OO language
-```Ruby
+```ruby
 >> 4.class
 => Fixnum
 >> 4.methods
@@ -115,7 +115,7 @@ Get an error message when types collide at run time.
 Ruby does not do type checking until execution.
 
 
-```Ruby
+```ruby
 >> 4.class
 => Fixnum
 >> (4.0).class
@@ -131,7 +131,7 @@ TypeError: ...
 
 *Duck Typing*
 
-```Ruby
+```ruby
 i = 0
 a = ['100', 100.0]
 while i < 2
@@ -154,7 +154,7 @@ the function will return the value of the last expression.
 
 Function is an object. Functions can be passed to other functions as parameters.
 
-```Ruby
+```ruby
 >> def tell_the_truth
 >> 		true
 >> end
@@ -162,7 +162,7 @@ Function is an object. Functions can be passed to other functions as parameters.
 
 ###Arrays
 
-```Ruby
+```ruby
 >> animals = ['lions', 'tigers', 'bears']
 => ['lions', 'tigers', 'bears']
 
@@ -188,13 +188,13 @@ bears
 => Range
 ```
 Arrays don't need to be homogeneous:
-```Ruby
+```ruby
 >> a = ["zero", 1, ["two", "thins"]]
 => ["zero", 1, ["two", "thins"]]
 ```
 
 Multidimentional array:
-```Ruby
+```ruby
 >> a = [[1, 2, 3], [10, 20, 30], [40, 50, 60]]
 => [[1, 2, 3], [10, 20, 30], [40, 50, 60]]
 
@@ -206,7 +206,7 @@ Multidimentional array:
 ```
 
 ###Hashes
-```Ruby
+```ruby
 >> numbers = {1 => 'one', 2 => 'two'}
 => {1 => 'one', 2 => 'two'}
 
@@ -223,7 +223,7 @@ Multidimentional array:
 ## Clojure
 *s-expressions*
 
-```Clojure
+```clojure
 (max 3 5)
 5
 (+ 1 (* 2 3))
@@ -235,7 +235,7 @@ Multidimentional array:
 Vector:[]
 
 Starts with index 0
-```Clojure
+```clojure
 (def droids ["Huey","Dewey","Louie"])
 (count droids)
 3
@@ -247,7 +247,7 @@ Starts with index 0
 
 Map:{}
 
-```Clojure
+```clojure
 (def me {:name "Paul" :age 45 :sex :male})
 (:age me)
 45
@@ -255,7 +255,7 @@ Map:{}
 
 function `defn`, with arguments specified as a vector:
 
-```Clojure
+```clojure
 (defn percentage [x p] (* x (/ p 100.0)))
 (percentage 200 10)
 20.0
@@ -279,7 +279,7 @@ public int sum(int[] numbers){
 
 Concatenate with ++ instead of +
 
-```Haskell
+```haskell
 
 Prelude> "Hello"
 "Hello"
@@ -300,7 +300,7 @@ Chars and string
 
 A string is just a list of characters
 
-```Haskell
+```haskell
 Prelude> 'a'
 'a'
 Prelude> ['a','b']
@@ -313,7 +313,7 @@ Booleans
 
 In Haskell, `if` is a function, not a control structure. It returns a value just like any other function.
 
-```Haskell
+```haskell
 Prelude> if (5 == 5) then "true"
 
 <interactive>:1:23: parse error (possibly incorrect indentation)
@@ -323,30 +323,28 @@ Prelude> if (5 == 5) then "true" else "false"
 ```
 
 Haskell is strong typed, `if` takes strictly boolean types.
-```Haskell
+```haskell
 Prelude> if 1 then "true" else "false"
 
 <interactive>:1:3:
 No instance for (Num Bool)
 arising from the literal `1' at <interactive>:1:3
-...
 
 Prelude> "one" +1
 
 <interactive>:1:0:
 No instance for (Num [Char])
 arising from a use of `+' at <interactive>:1:0-8
-...
 ```
 
 Type inference `:t`
-```Haskell
+```haskell
 Prelude> :t 5
 5 :: (Num t) =>t
 ```
 
 Turn on the type inference option
-```Haskell
+```haskell
 Prelude> :set +t
 
 Prelude> 5
@@ -367,7 +365,7 @@ it :: Bool
 ```
 
 `let`: binds a variable to a function in a local scope
-```Haskell
+```haskell
 Prelude> let x = 10
 
 Prelude> x
@@ -380,12 +378,12 @@ Prelude> double 2
 ```
 
 Specifying type
-```Haskell
+```haskell
 module Main where
 	double :: Integer -> Integer
 	double x = x +x
 ```
-```Haskell
+```haskell
 Prelude> :load double.hs
 [1 of 1] Compiling Main ( double.hs, interpreted)
 Ok, modules loaded: Main.
@@ -397,13 +395,13 @@ double :: Integer -> Integer
 ```
 
 Recursion
-```Haskell
+```haskell
 Prelude> let fact x = if x == 0 then 1 else fact (x - 1) * x
 Prelude> fact 3
 6
 ```
 
-```Haskell
+```haskell
 module Main where
 	factorial :: Integer -> Integer
 	factorial 0 = 1
