@@ -1,3 +1,18 @@
+##Exception
+
+```python
+(x,y) = (5,0)
+try:
+  z = x/y
+except ZeroDivisionError, e:
+  z = e # representation: "<exceptions.ZeroDivisionError instance at 0x817426c>"
+print z # output: "integer division or modulo by zero"
+```
+
+*exception* TimeoutError
+
+Raised when a system function timed out at the system level. Corresponds to errno ETIMEDOUT.
+
 ##Test
 
 ###doctest:
