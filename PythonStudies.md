@@ -1,3 +1,14 @@
+##Print contents to files
+```python
+log = open('logfile.txt', 'w')
+
+print >> log, ('Downloading file from URL %s' % url)
+text = urllib.urlopen(url).read()
+print >> log, 'File successfully downloaded'
+log.write("WTF\n")
+```
+
+
 ##Comman Line Arguments
 Python provides a getopt module that helps you parse command-line options and arguments.
 
@@ -110,6 +121,52 @@ usage: test.py -i <inputfile> -o <outputfile>
 $ test.py -i inputfile
 Input file is " inputfile
 Output file is "
+```
+
+##Interface
+
+```
+#include <string.h>
+int is_palindrome(char *text) {
+  int i, n=strlen(text);for (i=0; i<=n/2; ++i) {
+    if (text[i] != text[n-i-1]) return 0;
+  }
+  return 1;
+}
+
+```
+
+```
+%module palindrome
+%{
+#include <string.h>
+%}
+
+extern int is_palindrome(char *text);
+```
+`$ swig -python palindrome.i`
+
+After this, you should have two new files—one called palindrome_wrap.c and one called
+palindrome.py
+
+Compiling, linking and using:
+```bash
+gcc -c palindrome.c
+gcc -I$PYTHON_HOME -I$PYTHON_HOME/Include -c palindrome_wrap.c
+gcc -shared palindrome.o palindrome_wrap.o -o _palindrome.so
+```
+
+After these darkly magical incantations, you should end up with a highly useful file called
+\_palindrome.so. This is your shared library, which can be imported directly into Python.
+
+```python
+>>> import _palindrome
+>>> dir(_palindrome)
+['__doc__', '__file__', '__name__', 'is_palindrome']
+>>> _palindrome.is_palindrome('ipreferpi')
+1
+>>> _palindrome.is_palindrome('notlob')
+0
 ```
 
 ##Exception
