@@ -28,4 +28,15 @@ Out[6]: array([4, 7, -5, 3])
 In [7]: obj.index
 Out[7]: Int64Index([0, 1, 2, 3])
 
+In [8]: obj2 = Series([4, 7, -5, 3], index=['d', 'b', 'a', 'c'])
+In [9]: obj2
+Out[9]:
+d   4
+b   7
+a   -5
+c   3
+
+In [10]: obj2.index
+Out[10]: Index([d, b, a, c], dtype=object)
+
 ```
