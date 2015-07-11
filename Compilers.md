@@ -51,3 +51,7 @@ target-machine code
 Machine-Dependent Code Optimizer.
 
 target-machine code
+
+Lexical Analysis
+
+<token-name, attribute-value>
