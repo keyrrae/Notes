@@ -52,3 +52,10 @@ Marks
 
 </html>
 ```
+
+```bash
+$ traceroute www.ucsb.edu
+```
+The routes might change
+
+millitaristic goals
