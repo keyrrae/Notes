@@ -34,3 +34,12 @@ Aggressiveness, combativeness
 
 ### rebellion
 Open defiance and opposition, sometimes armed, to a person or thing in authority.
+
+### pact
+An agreement between two or more people or groups
+
+### pace
+Contrary to the opinion of
+
+### decriminalize
+To remove or reduce the criminal status of
