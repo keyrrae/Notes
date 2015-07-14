@@ -32,7 +32,12 @@ A caching system for speeding up the performance of applications.
 
 A feed framework for generating RSS feeds.
 
-setting.py
+
+start a new Django project, issue the following command:
+`$ django-admin.py startproject <project-name>`
+
+
+settings.py
 
 ```Python
 # Django settings for django_bookmarks project.
@@ -54,3 +59,10 @@ DATABASE_PORT = ''      # Set to empty string for default.
                         # Not used with sqlite3.
 # The rest of the file was trimmed.
 ```
+ populate the configured database with tables.
+ `$ python manage.py syncdb`
+
+Launching the development server
+`$ python manage.py runserver`
+
+http://localhost:8000/.
