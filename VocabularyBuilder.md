@@ -43,3 +43,5 @@ Contrary to the opinion of
 
 ### decriminalize
 To remove or reduce the criminal status of
+
+### apricot
