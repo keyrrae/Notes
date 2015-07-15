@@ -269,3 +269,74 @@ Premature optimization is the root of all evil.
 >>> import pstats
 >>> p = pstats.Stats('my_math.profile')
 ```
+### Packaging Program
+```python
+from distutils.core import setup
+setup(name='Hello',
+version='1.0',
+description='A simple example',
+author='Magnus Lie Hetland',
+py_modules=['hello'])
+```
+`$ python setup.py`
+
+usage:
+or:
+or:
+or:
+setup.py
+setup.py
+setup.py
+setup.py
+[global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+--help [cmd1 cmd2 ...]
+--help-commands
+cmd --help
+error: no commands supplied
+
+python setup.py build
+
+running build
+running build_py
+creating build
+creating build/lib
+copying hello.py -> build/lib
+
+python setup.py install
+
+running install
+running build
+running build_py
+running install_lib
+copying build/lib/hello.py -> /path/to/python/lib/python2.4/site-packages
+byte-compiling /path/to/python/lib/python2.4/site-packages/hello.py to hello.pyc
+
+To build an archive file
+
+`python setup.py sdist`
+
+writing manifest file 'MANIFEST'
+creating Hello-1.0
+making hard links in Hello-1.0...
+hard linking hello.py -> Hello-1.0
+hard linking setup.py -> Hello-1.0
+tar -cf dist/Hello-1.0.tar Hello-1.0
+gzip -f9 dist/Hello-1.0.tar
+removing 'Hello-1.0' (and everything under it)
+
+python setup.py bdist --formats=wininst
+
+dist/Hello-1.0.win32.exe
+
+###Compiling Extensions
+
+```python
+from distutils.core import setup, Extension
+setup(name='palindrome',
+version='1.0',
+ext_modules = [
+Extension('palindrome', ['palindrome2.c'])
+])
+```
+
+python setup.py build_ext --inplace

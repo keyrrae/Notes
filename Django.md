@@ -66,3 +66,34 @@ Launching the development server
 `$ python manage.py runserver`
 
 http://localhost:8000/.
+
+##Creating the Main Page View
+`$ python manage.py startapp bookmarks`
+
+• `__init__.py` : This file tells Python that bookmarks is a Python package.
+• `views.py` : This file will contain our views.
+• `models.py` : This file will contain our data models.
+
+`bookmarks/views.py`:
+
+```python
+from django.http import HttpResponse
+
+def main_page(request):
+  output = '''
+            <html>
+            <head><title>%s</title></head>
+            <body>
+              <h1>%s</h1><p>%s</p>
+            </body>
+            </html>
+            ''' % (
+            'Django Bookmarks',
+            'Welcome to Django Bookmarks',
+            'Where you can store and share bookmarks!'
+            )
+  return HttpResponse(output)
+```
+
+We build the HTML code of the response page, wrap it within an
+HttpResponse object and return it.
