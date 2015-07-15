@@ -59,3 +59,12 @@ $ traceroute www.ucsb.edu
 The routes might change
 
 millitaristic goals
+
+selector {declaration1; declaration2; ... declarationN }
+selector {property: value}
+h1 {color:red; font-size:14px;}
+
+p { color: #ff0000; }
+
+p { color: rgb(255,0,0); }
+p { color: rgb(100%,0%,0%); }
