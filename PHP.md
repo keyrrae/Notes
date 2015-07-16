@@ -135,3 +135,30 @@ myTest();
 echo $y; // outputs 15
 ?>
 ```
+
+ The PHP `var_dump()` function returns the data type and value:
+```php
+<?php 
+$x = 5985;
+var_dump($x);
+?>
+```
+
+`int(5985)`
+
+PHP objects
+```php
+<?php
+class Car {
+    function Car() {
+        $this->model = "VW";
+    }
+}
+
+// create an object
+$herbie = new Car();
+
+// show object properties
+echo $herbie->model;
+?>
+```
