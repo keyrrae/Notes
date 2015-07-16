@@ -12,3 +12,40 @@ echo "My first PHP script!";
 </html>
 ```
 
+What is a PHP File?
+PHP files can contain text, HTML, CSS, JavaScript, and PHP code
+PHP code are executed on the server, and the result is returned to the browser as plain HTML
+PHP files have extension ".php"
+
+What Do I Need?
+To start using PHP, you can:
+
+Find a web host with PHP and MySQL support
+Install a web server on your own PC, and then install PHP and MySQL
+
+PHP supports several ways of commenting:
+
+```php
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// This is a single-line comment
+
+# This is also a single-line comment
+
+/*
+This is a multiple-lines comment block
+that spans over multiple
+lines
+*/
+
+// You can also use comments to leave out parts of a code line
+$x = 5 /* + 15 */ + 5;
+echo $x;
+?>
+
+</body>
+</html>
+```
