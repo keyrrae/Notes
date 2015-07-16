@@ -103,3 +103,35 @@ myTest();
 echo "<p>Variable x outside function is: $x</p>";
 ?>
 ```
+`global` keyword
+
+```php
+<?php
+$x = 5;
+$y = 10;
+
+function myTest() {
+    global $x, $y;
+    $y = $x + $y;
+}
+
+myTest();
+echo $y; // outputs 15
+?>
+```
+
+The global variables are stored in an array called $GLOBAL[]
+
+```php
+<?php
+$x = 5;
+$y = 10;
+
+function myTest() {
+    $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+} 
+
+myTest();
+echo $y; // outputs 15
+?>
+```
