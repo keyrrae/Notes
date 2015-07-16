@@ -49,3 +49,57 @@ echo $x;
 </body>
 </html>
 ```
+
+PHP Case Sensitivity
+In PHP, all keywords, classes, functions, and user-defined functions are NOT case-sensitive.
+
+All legal:
+
+```php
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+ECHO "Hello World!<br>";
+echo "Hello World!<br>";
+EcHo "Hello World!<br>";
+?>
+
+</body>
+</html>
+```
+
+All variable names are case-sensitive.
+`$color` and `$COLOR` are different variables.
+
+Output variables
+```php
+<?php
+$txt = "W3Schools.com";
+echo "I love $txt!";
+?>
+```
+
+Equivalent:
+```php
+<?php
+$txt = "W3Schools.com";
+echo "I love ". $txt . "!";
+?>
+```
+
+function definition
+```php
+<?php
+$x = 5; // global scope
+
+function myTest() {
+    // using x inside this function will generate an error
+    echo "<p>Variable x inside function is: $x</p>";
+} 
+myTest();
+
+echo "<p>Variable x outside function is: $x</p>";
+?>
+```
