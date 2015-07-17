@@ -26,6 +26,34 @@
 
 | `q()` | Quit R. You’ll be prompted to save the workspace. |
 
+```r
+setwd("C:/myprojects/project1")
+options()
+options(digits=3)
+x <- runif(20)
+summary(x)
+hist(x)
+savehistory()
+save.image()
+q()
+```
+
+The `source("filename")` function submits a script to the current session.
+
+`source("myscript.R)`
+
+The `sink("filename")` function redirects output to the file filename .
+
+Append output to file
+
+`append = TRUE`
+
+Output to both screen and file
+
+`split = TRUE`
+
+
+
 ##Linear Regression
 Whenever using LR, you are making the assumption that there is a *linear*
 relationship between an outcome variable(dependent variable) and a
