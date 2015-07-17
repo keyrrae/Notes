@@ -52,7 +52,27 @@ Output to both screen and file
 
 `split = TRUE`
 
+pdf("filename.pdf") PDF file
+win.metafile("filename.wmf") Windows metafile
+png("filename.png") PBG file
+jpeg("filename.jpg") JPEG file
+bmp("filename.bmp") BMP file
+postscript("filename.ps") PostScript file
 
+```r
+sink("myoutput", append=TRUE, split=TRUE)
+pdf("mygraphs.pdf")
+source("script2.R")
+```
+The R code from file `script2.R` will be submitted, and the results will again appear on
+the screen. In addition, the text output will be appended to the file `myoutput` , and the
+graphic output will be saved to the file `mygraphs.pdf` .
+
+### Packages
+install.packages()
+
+## Batch
+`R CMD BATCH options infile outfile`
 
 ##Linear Regression
 Whenever using LR, you are making the assumption that there is a *linear*
