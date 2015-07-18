@@ -148,4 +148,20 @@ def reducer():
 
     oldKey = thisKey # just like an FSM, lol
     salesTotal += float(thisSale)
+
+  # print the last key value pair  
+  if oldKey != None:
+    print "{0}\t{1}".format(oldKey, salesTotal)
 ```
+ctrl+d
+the end of the input
+
+Test the mapper:
+
+```bash
+head -50 ../data/purchases.txt > testfile
+cat testfile | ./mapper.py
+```
+`cat testfile | ./mapper.py | sort | ./reducer.py`
+
+Test a small dataset before run hadoop with huge dataset
