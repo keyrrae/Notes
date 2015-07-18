@@ -71,6 +71,52 @@ graphic output will be saved to the file `mygraphs.pdf` .
 ### Packages
 install.packages()
 
+```r
+help.start()
+install.packages("vcd")
+help(package="vcd")
+library(vcd)
+help(Arthritis)
+Arthritis
+example(Arthritis)
+q()
+```
+
+## Data Structures
+Vector
+
+Matrix
+
+Array
+
+Data frame
+
+List: Vectors Arrays Data frames Lists
+
+### Vectors
+```r
+a <- c(1, 2, 5, 3, 6, -2, 4)
+b <- c("one", "two", "three")
+c <- c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE)
+```
+scalars:
+
+```r
+f <- 3
+g <- "US"
+h <- TRUE
+```
+
+```r
+a <- c(1, 2, 5, 3, 6, -2, 4)
+a[3]
+a[c(1, 3, 5)]
+a[2:6]
+```
+
+`a <- c(2:6)` <=> `a <- c(2, 3, 4, 5, 6)`
+
+### Matrices
 ## Batch
 `R CMD BATCH options infile outfile`
 
