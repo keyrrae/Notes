@@ -124,10 +124,30 @@ Two dimensional array where each element has the same mode(numeric, character, o
 
 `y <- matrix(1:20, nrow=5, ncol=4)`
 
+`x <- matrix(1:10, nrow=2)`
 
 
 
-## Batch
+### Arrays
+
+Arrays are similar to matrices but can have more than two dimensions
+
+`myarray <- array(vector, dimensions, dimnames)`
+
+```r
+dim1 <- c("A1", "A2")
+dim2 <- c("B1", "B2", "B3")
+dim3 <- c("C1" ,"C2", "C3", "C4")
+z <- arrya(1:24, c(2, 3, 4), dimnames=list(dim1, dim2, dim3))
+```
+### Data frames
+
+`mydata <- data.frame(col1, col2, col3, ...)`
+
+where `col1`, `col2`, `col3`, ... are column vectors of any type
+
+
+## Running R script in Batch mode
 `R CMD BATCH options infile outfile`
 
 ##Linear Regression
