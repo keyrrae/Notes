@@ -1,3 +1,83 @@
+
+### Getting help
+
+`?rnorm`
+
+`help.search("rnorm")`
+
+Get arguments
+
+`args("rnorm")`
+
+### R basics
+
+`readLines` can be useful for reading in lines of webpages
+
+```r
+> con <- url("http://www.jhsph.edu", "r")
+> x <- readLines(con)
+> head(x)
+[1] "<!DOCTYPE HTML PUBLIC..."
+[2] ""
+[3] "<html>"
+[4] "<head>"
+```
+
+## Getting and Cleaning Data
+
+Connecting and listing databases:
+
+```r
+ucscDb <- dbConnect(MySQL(), user="genome", host="genome-mysql.cse.ucsc.edu")
+result <- dbGetQuery(ucscDb, "show database")
+dbDisconnect(ucscDb)
+result
+```
+Merging data - merge()
+
+```r
+mergeData2 <- merge(reviews, solutions, by.x="solution_id", by.y="id", all=TRUE)
+head(mergedData2[, 1:6], 3)
+reviews[1, 1:6]
+```
+
+``
+## Exploratory Analysis
+Principles of Analytic Graphics
+
+Exploratory Graphics
+
+Plotting Systems in R
+
+base
+
+lattice
+
+ggplot2
+
+Hierarchical clustering
+
+K-Means clustering
+
+Dimension reduction
+
+Adding a genome
+`qplot(displ, hwy, data=mpg, geom=c("point","smooth"))`
+
+
+### Principles of Analytic Graphics
+1. Show comparisons
+2. Show causality, mechanism, explanation
+3. Show multivariate data
+4. Integrate multiple modes of evidence
+5. Describe and document the evidence
+6. Content is king
+
+
+
+
+
+
 ## Managing workspace
 
 | `getwd()` | List the current working directory. |
@@ -146,6 +226,13 @@ z <- arrya(1:24, c(2, 3, 4), dimnames=list(dim1, dim2, dim3))
 
 where `col1`, `col2`, `col3`, ... are column vectors of any type
 
+```r
+patientID <- c(1, 2, 3, 4)
+age <- c(25, 34, 28, 52)
+diabetes <- c("Type1", "Type2", "Type1", "Type1")
+status <- c("Poor", "Improved", "Excellent", "Poor")
+
+```
 
 ## Running R script in Batch mode
 `R CMD BATCH options infile outfile`
