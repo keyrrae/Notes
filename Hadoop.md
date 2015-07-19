@@ -165,3 +165,53 @@ cat testfile | ./mapper.py
 `cat testfile | ./mapper.py | sort | ./reducer.py`
 
 Test a small dataset before run hadoop with huge dataset
+
+localhost:50030
+
+
+Filtering Patterns
+Filtering problems
+sampling data
+top-N problems
+
+Summarization Patterns
+Counting
+minmax
+statistics
+index
+
+Structural Patterns
+Combinig data sets
+
+###Filtering Patterns
+Large dataset => small dataset
+
+
+Simple Filter
+Bloom Filter
+Sampling
+Random sampling
+top-N
+
+Filtering
+
+RDBMS
+sort data
+pick top N records
+
+MapReduce
+Each mapper generate top N list
+Reducer finds global top N
+
+Summarization Patterns
+
+Inverted index
+
+
+Numerical Summarizations
+
+Counting
+
+Min/max
+first/last
+mean/median

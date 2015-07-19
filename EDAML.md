@@ -117,6 +117,16 @@ a[2:6]
 `a <- c(2:6)` <=> `a <- c(2, 3, 4, 5, 6)`
 
 ### Matrices
+Two dimensional array where each element has the same mode(numeric, character, or logic)
+
+`mymatrix <- matrix(vector, nrow=number_of_rows, ncol=number_of_columns,
+  by_row=logic_value, dimnames=list(char_+vector_rownames, char_vector_colnames))`
+
+`y <- matrix(1:20, nrow=5, ncol=4)`
+
+
+
+
 ## Batch
 `R CMD BATCH options infile outfile`
 
