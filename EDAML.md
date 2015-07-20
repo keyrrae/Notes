@@ -83,7 +83,7 @@ y <- rnorm(12, mean=rep(c(1, 2, 1), each=4), sd=0.2)
 plot(x, y, col="blue", pch=19, cex=2)
 text(x+0.5, y+0.5, labels = as.character(1:12))
 ```
-### Reproducible Research
+## Reproducible Research
 - Structure of a Data Analysis
 - Organizing a Data Analysis
 - Markdown
@@ -91,6 +91,33 @@ text(x+0.5, y+0.5, labels = as.character(1:12))
 - R Markdown
 - Evidence based data Analysis
 - RPubs
+
+## Statistical Inference
+- Basic probability
+- Likelihood
+- Common distribution
+- Asymptotics
+- Confidence intervals
+- Hypothesis tests
+- Power
+- Bootstrapping
+- Non-parametric tests
+- Basic Bayesian statistics
+
+Example Bootstrapping
+```r
+B <- 1000
+n <- length(gmVol)
+resamples <- matrix(sample(gmVol, n*B, replace=TRUE), B, n)
+medians <- apply(resamples, 1, median)
+sd(medians)
+
+[1] 3.148706
+
+quantile(medians, c(0.25,0.975))
+    2.5%      97.5%
+  582.6384  595.3553
+```
 
 
 ## Managing workspace
