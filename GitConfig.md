@@ -33,8 +33,16 @@ $ ssh -T git@github.com
 
 ```Bash
 $ git clone git@github.com:keyrrae/Notes.git
-$ git add 
+$ git add
 $ git commit
 $ git push origin master
 ```
 
+Creat a branch with the command
+`git checkout -b branchname`
+
+see what branch you are on
+`git branch`
+
+To switch back to the master
+`git checkout master`
