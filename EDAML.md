@@ -120,6 +120,68 @@ quantile(medians, c(0.25,0.975))
   582.6384  595.3553
 ```
 
+Regression Models
+
+- Linear Regression
+- Multiple Regression
+- Confounding
+- Residuals and diagnostics
+- Prediction using linear Models
+- Model misspecification
+- Scatterplot smoothing/spines
+- Machine learning via Regression
+- Resampling inference in regression, bootstrapping, permutarion tests
+- Weighted regression
+- Mixed models(random intercepts)
+
+Basic regression model
+
+$Y = \beta_0+\beta_1X_i+/epsilon$
+
+N(0, \delta^2)
+
+Practical Machine learning
+
+Positive = identified
+
+negative = rejected
+
+True Positive = correctly dentified
+
+False positive = incorrectly identified
+
+True negative = correctly rejected
+
+False negative = incorrectly rejected
+
+
+###Correlated predictors
+
+```r
+library(caret)
+library(kernlab)
+
+data(spam)
+inTrain <- creatDataPartition(y=spam$type, p=0.75, list=False)
+training <- spam[inTrain,]
+testing <- spam[-inTrain,]
+
+M <- abs(cor(training[,-58]))
+diag(M) <- 0
+which(M > 0.8, arr.ind = T)
+
+```
+
+
+### Data Products
+- R packages : devtools, roxygen, testthat
+- rCharts
+marketing applications
+- Slidify
+- Shiny
+web applications
+
+
 
 ## Managing workspace
 
