@@ -40,8 +40,11 @@ mergeData2 <- merge(reviews, solutions, by.x="solution_id", by.y="id", all=TRUE)
 head(mergedData2[, 1:6], 3)
 reviews[1, 1:6]
 ```
+###Loading flat files - read.table()
+Important parameters file, header, sep, row.names, nrows
+related read.csv() read.csv2()
 
-``
+
 ## Exploratory Analysis
 Principles of Analytic Graphics
 
