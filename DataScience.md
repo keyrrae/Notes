@@ -407,6 +407,7 @@ status <- c("Poor", "Improved", "Excellent", "Poor")
 ## Running R script in Batch mode
 `R CMD BATCH options infile outfile`
 
+
 ##Linear Regression
 Whenever using LR, you are making the assumption that there is a *linear*
 relationship between an outcome variable(dependent variable) and a
