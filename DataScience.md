@@ -63,6 +63,13 @@ head(cameraData)
 ```
 
 ```r
+cameraData <- read.table("./data/cameras.csv", sep=",", header=TRUE)
+head(cameraData)
+
+cameraData <- read.csv("./data/cameras.csv")
+head(cameraData)
+```
+
 
 
 ## Exploratory Analysis
