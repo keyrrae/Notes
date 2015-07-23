@@ -243,6 +243,10 @@ Set of items: the set of objects you are interested in
 
 sometimes called the population
 
+Sharing data:
+
+http://figshare.com/
+
 
 ## Managing workspace
 
