@@ -44,6 +44,26 @@ reviews[1, 1:6]
 Important parameters file, header, sep, row.names, nrows
 related read.csv() read.csv2()
 
+```r
+if (!file.exists("data")){
+  dir.creat("data")
+}
+
+fileUrl <- "https://data.baltimorecity.gov/api/views/dz54-2aru/row.csv?accessType=DOWNLOAD"
+download.file(fileUrl, destfile="cameras.csv", method="curl")
+dateDownloaded <- date()
+```
+
+```r
+cameraData <- read.table("./data/cameras.csv")
+## Error: line 1 did not have 13 elements
+
+head(cameraData)
+## Error: object 'cameraData' not found
+```
+
+```r
+
 
 ## Exploratory Analysis
 Principles of Analytic Graphics
