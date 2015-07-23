@@ -108,6 +108,22 @@ cameraDataSubset
 
 ### Reading XML
 
+### Reading JSON
+
+### Using data.table
+
+### Reading MySQL
+
+### Reading HDF5
+
+### Reading data from the web
+
+### Reading data from APIs
+
+### Subsetting and sorting
+
+###
+
 
 ## Exploratory Analysis
 Principles of Analytic Graphics
