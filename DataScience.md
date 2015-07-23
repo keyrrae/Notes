@@ -209,10 +209,39 @@ Inferential analysis
 - involves estimation both the quantity and uncertainty about the estimation
 - depends heavily on both the population and the sampling scheme
 
+*Example: Effect of Air Pollution Control on Life Expectancy in United States:
+An Analysis of 545 U.S. Counties for the Period from 2000 to 2007*
 
- 
 
+Predictive analysis
 
+*use the data on some objects to predict values for another object*
+
+- If X predicts Y, it does not mean that X causes Y
+- depends heavily on measuring the right variables
+- more data and a simple model works well
+- Prediction is very hard, especially for the future references
+
+*Voting results, stock market*
+
+Causal analysis
+
+*find out what happens to one variable when you make another variable change*
+
+- randomized studies
+- usually identified as average effects but may not apply to every individual
+- "gold standard" for data analysis
+
+Mechanistic analysis
+understand the exact changes invariables that lead to changes in other variables for individual objects
+- Incredibly hard to infer, except in simple situations
+- usually modeled by a deterministic set of equations
+- Generally the random component of the data is measurement error
+- If the equations are known but the parameters are not, they may be inferred with data analysis
+
+Set of items: the set of objects you are interested in
+
+sometimes called the population
 
 
 ## Managing workspace
