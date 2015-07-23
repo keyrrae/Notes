@@ -182,6 +182,38 @@ marketing applications
 web applications
 
 
+Data Science questions in Approximate Order of Difficulty
+- Descriptive
+- Exploratory
+- Inferential
+- Predictive
+- Causal
+- Mechanistic
+
+Descriptive analysis
+- Census data
+- cannot be generalized without additional statistical modeling
+
+Exploratory analysis
+- find relationships
+- good for discovering new connections
+- useful for defining future studies
+- usually not the final say
+- EA alone should not be used for generalizing/predicting
+- **Correlation does not imply causation**
+
+Inferential analysis
+
+*Use a relatively small sample of data to say something about a bigger population*
+- commonly the goal of statistical models
+- involves estimation both the quantity and uncertainty about the estimation
+- depends heavily on both the population and the sampling scheme
+
+
+ 
+
+
+
 
 ## Managing workspace
 
