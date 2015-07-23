@@ -69,7 +69,44 @@ head(cameraData)
 cameraData <- read.csv("./data/cameras.csv")
 head(cameraData)
 ```
+Some more important parameters
+`quote` whether there are any quoted values `quote=""` means no quotes
+`na.strings` set the character that represents a missing value
+`nrows` how many lines to read
+`skip` how many lines to skip
 
+### Excel files
+
+```r
+if (!file.exists("data")){
+  dir.creat("data")
+}
+
+fileUrl <- "https://data.baltimorecity.gov/api/views/dz54-2aru/row.xlsx?accessType=DOWNLOAD"
+download.file(fileUrl, destfile="cameras.xlsx", method="curl")
+dateDownloaded <- date()
+```
+`read.xlsx()`, `read.xlsx2()` xlsx package
+
+```r
+library(xlsx)
+cameraData <- read.xlsx("./data/cameras.xlsx", sheetIndex=1, header=TRUE)
+head(cameraData)
+```
+
+Reading specific rows and columns
+
+```r
+colIndex <- 2:3
+rowIndex <- 1:4
+cameraDataSubset <- read.xlsx(./data/cameras.xlsx", sheetIndex=1,colIndex=colIndex, rowIndex=rowIndex)
+cameraDataSubset
+```
+-`write.xlsx` write out an Excel
+-`read.xlsx2` much faster, but may be slightly unstable
+- `XLConnect` package has more options for writing and manipulating Excel files
+
+### Reading XML
 
 
 ## Exploratory Analysis
