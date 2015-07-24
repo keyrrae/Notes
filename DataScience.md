@@ -404,6 +404,42 @@ spam       564    1171
 
 Perfect in-sample predictor won't perform as well on new samples
 
+prediction study design
+1. define your error rate
+2. Split data into: training, testing, validation
+3. on the training set pick features: use cross-validation
+4. on the training set pick prediction function: use cross-validation
+5. If no validation, apply 1x to test set
+6. if valid, apply to test set and refine, apply 1x to validation
+
+`http://www.kaggle.com`
+
+Avoid small sample sizes
+- Suppose a binary outcome
+- flipping a coin
+- probability of perfect classification is approx. (1/2)^(sample size)
+n=1 50% of 100% accuracy
+n=2 25% of 100% accuracy
+n=10 0.10% of 100% accuracy
+
+Rules of thumb for prediction study design
+- Large sample size
+-- 60% training
+-- 20% testing
+-- 20% validation
+
+- Medium sample size
+-- 60% training
+-- 40% testing
+
+- Small sample size
+-- do cross validation
+-- report caveat of small sample size
+
+Types of errors
+
+
+
 
 ## Statistical Inference
 - Basic probability
