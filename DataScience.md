@@ -377,6 +377,50 @@ marketing applications
 - Shiny
 web applications
 
+## Shiny
+
+creating interactive R programs embedded into a web page
+
+```r
+install.packages("shiny")
+library(shiny)
+```
+
+- rstudio manipulate
+- rCharts
+
+A shiny project is a directory containing at least two parts:
+- `ui.R` controls how it looks
+- `server.R` controls what it does
+
+`ui.R`:
+
+```
+library(shiny)
+shinyUI(pageWithSidebar(
+    headerPanel("Data science FTW"),
+    sidebarPanel(
+        h3('Sidebar text')
+    ),
+    mainPanel(
+        h3('Main Panel text')
+    )
+))
+```
+
+`server.R`:
+```
+library(shiny)
+shinyServer(
+    function(input, output){
+    ...
+    }
+)
+
+`setwd()` to the directory and type `runApp()`
+
+It should open an browser window with the app running
+
 
 Data Science questions in Approximate Order of Difficulty
 - Descriptive
