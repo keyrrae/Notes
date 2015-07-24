@@ -176,6 +176,74 @@ text(x+0.5, y+0.5, labels = as.character(1:12))
 - Evidence based data Analysis
 - RPubs
 
+# Machine Learning/Prediction
+
+## Who predicts
+- Local government -> pension payments
+- Google -> whether you will click on an AD
+- Amazon -> what movies you will watch
+- Insurance -> what your risk of death is
+- Johns Hopkins -> who will succeed in their programs
+
+## What is prediction
+
+The central dogma of prediction:
+
+`Probability/Sampling -> Training Set -> Prediction function`
+
+### Components of a predictor
+
+question -> input data -> features -> algorithm -> parameters -> evaluation
+
+#### Question:
+
+**Start with a general question**
+
+Can I automatically detect emails that are SPAM that are not?
+
+**Make it concrete**
+
+Can I use quantitative characteristics of the emails to classify them as SPAM/HAM
+
+#### Input Data:
+
+```r
+library(kernlab)
+data(spam)
+head(spam)
+```
+
+#### Features:
+
+```
+Dear Jeff,
+
+Can you send me your address so I can send you the invitation?
+
+Thanks,
+
+Ben
+```
+
+Frequency of `you` = 2/17 = 0.118
+
+#### Algorithm:
+```
+plot(density(spam$your[spam$type=="nonspam"]),
+    col="blue", main="", xlab="Frequency of 'your'")
+lines(density(spam$your[spam$type=="spam"]), col="red")
+```
+
+Our algorithm:
+- find a value C
+- **frequency of 'your' > C** predicts "spam"
+
+
+
+
+
+
+
 ## Statistical Inference
 - Basic probability
 - Likelihood
