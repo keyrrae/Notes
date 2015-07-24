@@ -238,6 +238,29 @@ Our algorithm:
 - find a value C
 - **frequency of 'your' > C** predicts "spam"
 
+#### Parameters
+
+```
+plot(density(spam$your[spam$type=="nonspam"]),
+    col="blue", main="", xlab="Frequency of 'your'")
+lines(density(spam$your[spam$type=="spam"]), col="red")
+abline(v=0.5, col="black")
+```
+
+#### Evaluation
+
+```
+prediction <- ifelse(spam$your>0.5, "spam", "nonspam")
+table(prediction, spam$type)/length(spam$type)
+
+prediction    nonspam    spam
+    nonspam     0.4590  0.1017
+    spam        0.1469  0.2923
+```
+
+Accuracy ~= 0.459 + 0.292 = 0.751
+
+True Positive + True Negative
 
 
 
