@@ -286,7 +286,123 @@ question > data > features > algorithms
 - not paying attention to data-specific quirks
 - Throwing away information unnecessarily
 
+Issue to consider
+- Interpretable
+- Simple
+- Accurate
+- Fast (to train and test)
+- Scalable
 
+Prediction is about accuracy tradeoffs
+- Interpretability vs. Accuracy
+- Speed vs. Accuracy
+- Simplicity vs. Accuracy
+- Scalability vs. Accuracy
+
+## In sample and out of sample error
+**In sample error:**
+
+The error rate you get on the same data set you used to build your predictor.
+Sometimes called resubstitution error.
+
+**Out of sample error:**
+
+The error rate you get on a new data set. generalization error
+
+**Key ideas:**
+- out of sample error is what you care about
+- in sample error < out of sample error
+- matching your algorithm to the data you have
+
+
+Sampling:
+
+```r
+library(kernlab)
+data(spam)
+set.seed(333)
+smallSpam <- spam[sample(dim(spam)[1], size=10), ]
+spamLabel <- (smallSpam$type=="spam")*1+1
+plot(smallSpam$capitalAve, col=spamLabel)
+```
+
+### Prediction rule 1
+
+capitalAve > 2.7 => "spam"
+
+capitalAve < 2.40 => "nonspam"
+
+capitalAve [2.40 2.45] = "spam"
+
+capitalAve [2.45 2.7] = "nonspam"
+
+```r
+rule1 <- function(x) {
+    prediction <- rep(NA, length(x))
+    prediction[x > 2.7] <- "spam"
+    prediction[x < 2.40] <- "nonspam"
+    prediction[(x >= 2.40 & x <= 2.45)] <- "spam"
+    prediction[(x >= 2.45 & x <= 2.70)] <- "nonspam"
+    return(prediction)
+}
+table(rule1(smallSpam$capitalAve), smallSpam$type)
+```
+
+```
+        nonspam     spam
+nonspam    5    0
+spam       0    5
+```
+
+### Prediction rule 2
+
+capitalAve > 2.4 => "spam"
+
+capitalAve <= 2.4 => "nonspam"
+
+```r
+rule2 <- function(x) {
+    prediction <- rep(NA, length(x))
+    prediction[x > 2.8] <- "spam"
+    prediction[x <= 2.8] <- "nonspam"
+    return(prediction)
+}
+table(rule2(smallSpam$capitalAve), smallSpam$type)
+```
+
+```
+        nonspam     spam
+nonspam    5    1
+spam       0    4
+```
+
+### Apply to complete spam data
+
+`table(rule1(spam$capitalAve), spam$type)`
+
+```
+        nonspam     spam
+nonspam    2141    588
+spam       647    1225
+```
+
+`table(rule2(spam$capitalAve), spam$type)`
+
+```
+        nonspam     spam
+nonspam    2224    642
+spam       564    1171
+```
+
+`sum(rule1(spam$capitalAve)==spam$type)`
+
+`[1] 3366`
+
+`sum(rule2(spam$capitalAve)==spam$type)`
+
+`[1] 3395`
+
+Perfect in-sample predictor won't perform as well on new samples
 
 
 ## Statistical Inference
