@@ -262,7 +262,29 @@ Accuracy ~= 0.459 + 0.292 = 0.751
 
 True Positive + True Negative
 
+## Relative importance of steps
 
+question > data > features > algorithms
+
+### INPUT DATA: Garbage in = Garbage out
+
+- May be easy (movie ratings -> new movie ratings)
+- May be harder (gene expression data -> disease)
+- Depends on what is a "good prediction"
+- Often **more data > better models**
+- The most important! 
+
+### Features matter
+**Property of good features**
+
+- lead to data compression
+- retain relevant information
+- are created based on expert application knowledge
+
+**Common mistakes**
+- trying to automate feature selection
+- not paying attention to data-specific quirks
+- Throwing away information unnecessarily
 
 
 
