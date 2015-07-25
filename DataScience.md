@@ -162,7 +162,41 @@ rootNode[[1]]
 `xmlSApply(rootNode, xmlValue)`
 
 
+XPath
+
+- `/node` Top level node
+- `//node` node at any level
+- `node[@attr-name]` Node with an attribute name
+- `node[@attr-name='bob']` node with attribute name attr-name='bob'
+
+Get the items on the menu and prices
+
+`xpathSApply(rootNode,"//name",xmlValue)`
+
+`xpathSapply(rootNode,"//price",xmlValue)`
+
+
 ### Reading JSON
+
+JSON
+- Javascript Object Notation
+- Lightweight data storage
+- Common format for data from application programming interfacess(APIs)
+- Similar structure to XML but different syntax/format
+- Data stored as
+- Numbers(double)
+- Strings(double quoted)
+- Boolean(true or false)
+- Array(ordered, comma separated enclosed in square brackets [])
+- Object(unordered, comma separated collection of key:value pairs in curley brackets{})
+
+```r
+library(jsonlite)
+jsonData <- fromJSON("https://api.github.com/users/jtleek/repos")
+names(jsonData)
+```
+
+
 
 ### Using data.table
 
