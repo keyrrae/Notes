@@ -156,6 +156,10 @@ rootNode[[1]]
   <calories> 650 </calories>
 </food>
 ```
+`rootNode[[1]][[1]]`
+`<name> Belgian Waffles </name>`
+
+`xmlSApply(rootNode, xmlValue)`
 
 
 ### Reading JSON
