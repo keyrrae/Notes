@@ -266,8 +266,41 @@ head(DT, 3)
 2   1.0016   a   1.5093
 3   -0.0338  a   0.4844
 ```
+See all the data tables in memory
 
-### Reading MySQL
+```r
+tables()
+
+    NAME  NROW MB COLS  KEY
+[1,]  DT    9  1  x,y,z
+Total: 1MB
+```
+
+Subsetting rows
+
+```
+DT[c(2, 3)]
+
+      x     y      z
+1   1.0016   a   1.5093
+2   -0.0338  a   0.4844
+```
+
+### Reading mySQL
+
+mySQL
+- Free and widely used open source database software
+- Widely used in internet based applications
+- Data are structured in
+-- databases
+Tables within databases
+Fields within tables
+Each row is called a record
+
+`install.packages("RMySQL")`
+
+Connecting and listing databases
+
 
 ### Reading HDF5
 
