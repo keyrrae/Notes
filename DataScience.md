@@ -301,8 +301,74 @@ Each row is called a record
 
 Connecting and listing databases
 
+```r
+ucscDb <- dbConnect(MySQL(), user="genome", host="genome-mysql.cse.ucsc.edu")
+result <- dbGetQuery(ucscDb, "show databases;"); dbDisconnect(ucscDb);
 
-### Reading HDF5
+[1] TRUE
+
+result
+
+      Database
+1 information_schema
+2       ailMel1
+3       ailMis1
+```
+
+Connecting to hg19 and listing tables
+
+```r
+ucscDb <- dbConnect(MySQL(), user="genome", db="hg19", host="genome-mysql.cse.ucsc.edu")
+allTables <- dbListTables(hg19)
+length(allTables)
+
+[1] 10949
+
+allTables[1:5]
+
+[1] "HInv"  "HInvGeneMrna"  "acembly" "acemblyClass"  "acemblyPep"
+```
+
+Get dimensions of a specific table
+```r
+dbListFields(hg19, "affyU133Plus2")
+
+
+dbGetQuery(hg19, "select count(*) from affyU133Plus2")
+  count(*)
+1 58463
+```
+
+Read from the table
+
+```r
+affyData <- dbReadTable(hg19, "affyU133Plus2")
+head(affyData)
+
+```
+
+Select a specific subset
+
+```r
+query <- dbSendQuery(hg19, "select * from affyU133Plus2 where misMatches between 1 and 3")
+affyMis <- fetch(query); quantile(affyMis$misMatches)
+
+0%  25% 50% 75% 100%
+1     1   2   2   3
+
+affyMisSmall <- fetch(query, n=10); dbClearResult(query)
+
+[1] TRUE
+```
+
+Don't forget to close the connection
+
+```r
+dbDisconnect(hg19)
+
+[1] TRUE
+```
+\### Reading HDF5
 
 ### Reading data from the web
 
