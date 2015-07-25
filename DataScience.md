@@ -108,6 +108,46 @@ cameraDataSubset
 
 ### Reading XML
 
+- Extensible markup language
+- frequently used to store structured data
+- Particularly widely used in internet applications
+- Extracting xml is the base for most web scraping
+- components:
+  markup - labels that give the text structure
+  content - the actual text of the document
+
+Tags, elements and attributes
+
+start tags `<section>`
+end tags `</section>`
+empty tags `<line-brak />`
+
+Elements are specific examples of tags
+`<Greeting> Hello, world </Greeting>`
+
+Attributes are components of the labels
+```xml
+<img src="jeff.jpg" alt="instructor"/>
+<step number="3"> Connect A to B. </step>
+```
+
+```r
+library(XML)
+fileUrl <- "http://www.w3schools.com/cml/simple.xml"
+doc <- xmlTreeParse(fileUrl, useInternal=TRUE)
+rootNode <- xmlRoot(doc)
+xmlName(rootNode)
+```
+
+`[1] "breakfast_menu"`
+
+names(rootNode)
+
+food    food    food    food    food
+"food"  "food"  "food"  "food"  "food"
+
+
+
 ### Reading JSON
 
 ### Using data.table
@@ -272,7 +312,7 @@ question > data > features > algorithms
 - May be harder (gene expression data -> disease)
 - Depends on what is a "good prediction"
 - Often **more data > better models**
-- The most important! 
+- The most important!
 
 ### Features matter
 **Property of good features**
