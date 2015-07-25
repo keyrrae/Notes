@@ -146,6 +146,16 @@ names(rootNode)
 food    food    food    food    food
 "food"  "food"  "food"  "food"  "food"
 
+rootNode[[1]]
+
+```xml
+<food>
+  <name> Belgian Waffles </name>
+  <price> $5.95 </price>
+  <description> Tow of our famous Belgian Waffles with plenty of real maple syrup</description>
+  <calories> 650 </calories>
+</food>
+```
 
 
 ### Reading JSON
