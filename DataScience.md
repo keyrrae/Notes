@@ -196,9 +196,76 @@ jsonData <- fromJSON("https://api.github.com/users/jtleek/repos")
 names(jsonData)
 ```
 
+Writing data frames to JSON:
 
+```r
+myjson <- toJSON(iris, pretty=TRUE)
+cat(myjson)
+```
+
+```json
+[
+  {
+      "Sepal.Length":5.1,
+      "Sepal.Width":3.5,
+      "Petal.Length":1.4,
+      "Petal.Width":0.2,
+      "Species":"setosa"
+  },
+  {
+      "Sepal.Length":4.9,
+      "Sepal.Width":3.0,
+      "Petal.Length":1.4,
+      "Petal.Width":0.2,
+      "Species":"setosa"
+  }
+]
+```
+
+Convert back to JSON
+
+```r
+iris2 <- fromJSON(myjson)
+head(iris2)
+```
+
+```
+  Sepal.Length  Sepal.Width Petal.Length  Petal.Width Species
+1
+2
+....
+```
 
 ### Using data.table
+
+data.table
+- Inherets from data.frame
+-- All functions that accept data.frame work on data.table
+- Written in C so it is much faster
+- Much, much faster at sub setting, group, and updating
+
+```r
+library(data.table)
+DF <- data.frame(x=rnorm(9), y=rep(c("a", "b", "c"), each=3), z=rnorm(9))
+head(DF,3)
+
+      x     y      z
+1   0.4159  a   -0.05855
+2   0.8433  a   0.13732
+3   1.0585  a   2.16448
+```
+
+
+```r
+DT <- data.table(x=rnorm(9), y=rep(c("a", "b", "c"), each=3), z=rnorm(9))
+head(DT, 3)
+
+
+      x     y      z
+1   -0.2772  a   0.2530
+2   1.0016   a   1.5093
+3   -0.0338  a   0.4844
+```
 
 ### Reading MySQL
 
