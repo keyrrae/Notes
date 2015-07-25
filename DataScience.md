@@ -368,7 +368,36 @@ dbDisconnect(hg19)
 
 [1] TRUE
 ```
-\### Reading HDF5
+### Reading HDF5
+
+HDF5
+- Used for storing large data setosa
+- Supports storing a range of data types
+- Heirachical data format
+- groups containing zero or more data sets and metadata
+    Have a group header with group name and list of attributes
+    Have a group symbol table with a list of objects in group
+-   datasets multidimentional array of data elements with metatdata
+    Have a header with name, datatype, dataspace, and storage layout
+    Have a data array with the data
+
+R HDF5 package
+
+```r
+source("http://biconductor.org/biocLite.R")
+biocLite("rhdf5")
+
+library(rhdf5)
+created <- h5createFile("example.h5")
+created
+
+[1] TRUE
+```
+
+Packages from Biconductor http://bioconductor.org/. primarily used for genomics
+but also has good "big data" packages
+
+
 
 ### Reading data from the web
 
