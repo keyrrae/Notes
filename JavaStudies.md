@@ -109,3 +109,17 @@ public class LiftOff implements Runnable {
   }  
 }
 ```
+
+
+## The Thread class
+
+```java
+public class BasicThreads {
+  public static void main(String[] args) {
+    Thread t = new Thread(new LiftOff());
+    t.start();
+    System.out.println("Waiting for LiftOff");
+  }
+}
+
+```
