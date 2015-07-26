@@ -397,6 +397,17 @@ created
 Packages from Biconductor http://bioconductor.org/. primarily used for genomics
 but also has good "big data" packages
 
+Can be used to interface with hdf5 dta sets
+
+Create groups
+
+```r
+created <- h5createGroup("example.h5", "foo")
+created <- h5createGroup("example.h5", "baa")
+created <- h5createGroup("example.h5", "foo/foobaa")
+h5ls("example.h5")
+```
+
 
 
 ### Reading data from the web
