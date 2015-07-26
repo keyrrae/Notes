@@ -21,6 +21,8 @@ println(whole, fraction, words)
 */
 ```
 
+Values are **constants**.
+
 Once you initialize a **val**, you can't change it.
 
 
@@ -54,3 +56,7 @@ you to have many lines
 in your string
 */
 ```
+
+## Variables
+
+**var** *name* : *type* = *initialization*
