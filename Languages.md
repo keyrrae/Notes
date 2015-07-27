@@ -220,7 +220,55 @@ Multidimentional array:
 => "Hi, mom!"
 ```
 
+```ruby
+def tell_the_truth(options={})
+	if options[:profession] == :lawyer
+		'it could be believed that this is almost certainly not false.'
+	else
+		true
+	end
+end
 
+=> nil
+
+>> tell_the_truth
+=> true
+
+>> tell_the_truth :profession => :lawyer
+=> "it could be believed that this is almost certainly not false."
+```
+
+### Code Blocks and Yield
+
+```ruby
+>> 3.times {puts 'hiya there, kiddo'}
+hiya there, kiddo
+hiya there, kiddo
+hiya there, kiddo
+```
+Code block: code between braces
+
+```ruby
+>> animals = ['lions and ', 'tigers and', 'bears', 'oh my']
+=>  ["lions and ", "tigers and", "bears", "oh my"]
+>> animals.each {|a| puts a}
+lions and
+tigers and
+bears
+oh my
+```
+
+```ruby
+class Fixnum
+	def my_times
+		i = self
+		while i > 0
+			i = i - 1
+			yield
+		end
+	end
+end
+```
 
 ## Clojure
 *s-expressions*
