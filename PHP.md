@@ -97,7 +97,7 @@ $x = 5; // global scope
 function myTest() {
     // using x inside this function will generate an error
     echo "<p>Variable x inside function is: $x</p>";
-} 
+}
 myTest();
 
 echo "<p>Variable x outside function is: $x</p>";
@@ -129,7 +129,7 @@ $y = 10;
 
 function myTest() {
     $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
-} 
+}
 
 myTest();
 echo $y; // outputs 15
@@ -138,7 +138,7 @@ echo $y; // outputs 15
 
  The PHP `var_dump()` function returns the data type and value:
 ```php
-<?php 
+<?php
 $x = 5985;
 var_dump($x);
 ?>
@@ -162,3 +162,18 @@ $herbie = new Car();
 echo $herbie->model;
 ?>
 ```
+
+`createTable`
+Checks whether a table exists and, if not, create it.
+
+`queryMysql`
+Issues a query to MySQL, outputting an error message if it fails.
+
+`destroySession`
+Destroys a PHP session and clears its data to log users out.
+
+`sanitizeString`
+Removes potentially malicious code or tags from user input.
+
+`showProfile`
+Displays a user's image and "about me" message, if he has one.

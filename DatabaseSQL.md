@@ -1,49 +1,25 @@
-SELECT LastName FROM Persons
+`SELECT LastName FROM Persons;`
 
-DML statements
+`SELECT title FROM publications WHERE author = 'Charles Dickens';`
 
-SELECT
-UPDATE
-DELETE
-INSERT INTO
+*Database*
+The overall container for a collection of MySQL data
 
+*Table*
+A subcontainer within a database that stores the actual data.
 
-DDL statements data definition language
+*Row*
+A single record within a table, which may contain several fields
 
-CREATE DATABASE - 创建新数据库
+*Column*
+The name of a field within a row.
 
-ALTER DATABASE - 修改数据库
+`$ mysql -u root -p`
 
-CREATE TABLE - 创建新表
+Login as root user without a password.
 
-ALTER TABLE - 变更（改变）数据库表
+`mysql> SHOW databases;`
 
-DROP TABLE - 删除表
+**Don't press Ctrl-C to cancel a command**, it will close the program
 
-CREATE INDEX - 创建索引（搜索键）
-
-DROP INDEX - 删除索引
-
-SELECT LastName,FirstName FROM Persons
-
-SELECT DISTINCT Company FROM Orders
-
-操作符	描述
-
-=	等于
-
-<>	不等于
-
->	大于
-
-<	小于
-
->=	大于等于
-
-<=	小于等于
-
-BETWEEN	在某个范围内
-
-LIKE	搜索某种模式
-
-SELECT * FROM Persons WHERE City='Beijing'
+`meaningless gibberish to mysql \c`
