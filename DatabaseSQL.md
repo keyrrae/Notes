@@ -52,3 +52,21 @@ Don't use `\c` inside a string or after a semicolon, it won't work
 
 
 `CRANT ALL ON publications.* TO 'jim'@'localhost' IDENTIFIED BY 'mypassword';`
+
+login as jim:
+
+`mysql -u jim -p`
+
+### Creating a table
+
+```SQL
+CREATE TABLE classics(
+  author VARCHAR(128),
+  title VARCHAR(128),
+  type VARCHAR(16),
+  year CHAR(4)
+) ENGINE MyISAM;
+
+To check whether new table has been created:
+
+`DESCRIBE classics;`
