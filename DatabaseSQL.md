@@ -182,3 +182,33 @@ DATE '0000-00-00'
 TIMESTAMP '0000-00-00 00:00:00'
 TIME '00:00:00'
 YEAR 0000 (Only years 0000 and 1901 - 2155)
+
+TIMESTAMP: 1970 2037
+
+
+The AUTO_INCREMENT data type
+INT UNSIGNED
+Makes the column take an integer large enough for you to store more than four
+billion records in the table.
+NOT NULL
+Ensures that every column has a value. Many programmers use NULL in a field to
+indicate that the field doesn’t have a value, but that would allow duplicates, which
+would violate the whole reason for this column’s existence. So, we disallow NULL
+values.
+AUTO_INCREMENT
+Causes MySQL to set a unique value for this column in every row, as described
+earlier. We don’t really have control over the value that this column will take in
+each row, but we don’t care: all we care about is that we are guaranteed a unique
+value.
+KEY
+An autoincrementing column is useful as a key, because you will tend to search for
+rows based on this column.
+
+CREATE TABLE classics (
+ author VARCHAR(128),
+ title VARCHAR(128),
+ type VARCHAR(16),
+ year CHAR(4),
+ id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY) ENGINE MyISAM;
+
+ ALTER TABLE classics DROP id;
