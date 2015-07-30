@@ -2,6 +2,14 @@
 A DataFrame represents a tabular, spreadsheet-like data structure containing
 an ordered collection of columns, each of which can be a different value type.
 
+Import conventions
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
 
 ##pandas
 
@@ -38,5 +46,31 @@ c   3
 
 In [10]: obj2.index
 Out[10]: Index([d, b, a, c], dtype=object)
+
+```
+
+
+### DataFrame
+
+```python
+data = {{'state': ['Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada'],
+        'year': [2000, 2001, 2002, 2001, 2002],
+        'pop': [1.5, 1.7, 3.6, 2.4, 2.9]}
+frame = DataFrame(data)
+
+In [38]: frame
+Out[38]:
+In [38]: frame
+Out[38]:
+  pop state year
+0 1.5 Ohio 2000
+1 1.7 Ohio 2001
+2 3.6 Ohio 2002
+3 2.4 Nevada 2001
+4 2.9 Nevada 2002
+
+
+
+
 
 ```
