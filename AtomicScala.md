@@ -77,3 +77,43 @@ j: Int = 2
 scala> i + j
 res1: Int = 3
 ```
+
+```scala
+// Expressions.scala
+val c = {
+  val i1 = 2
+  val j1 = 4/i1
+  i1 * j1
+}
+println(c)
+
+/* Output:
+4
+*/
+```
+
+## Conditional Expressions
+
+```
+// If.scala
+if(1 > 0) {
+  println("It's true!")
+}
+
+/* Output:
+It's true!
+*/
+```
+
+Create a boolean expression
+```
+// If2.scala
+val x:Boolean = { 1 > 0 }
+if(x) {
+  println("It's true!")
+}
+
+/* Output:
+It's true!
+*/
+```
