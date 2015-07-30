@@ -60,3 +60,20 @@ in your string
 ## Variables
 
 **var** *name* : *type* = *initialization*
+
+## Expressions
+
+*A statement changes state*
+
+*An expression express*
+
+It produces a result
+
+```scala
+scala> val i = 1; val j = 2
+i: Int = 1
+j: Int = 2
+
+scala> i + j
+res1: Int = 3
+```
