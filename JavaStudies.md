@@ -138,4 +138,23 @@ public class SimpleGui1 {
         frame.getContentPane().add(button);
         frame.setSize(300,300);
         frame.setVisible(true);
+    }
+}
 ```
+
+`JButton`
+
+`JCheckBox`
+
+`JTextField`
+
+```java
+JPanel panelA = new JPanel();
+JPanel panelB = new JPanel();
+panelB.add(new JButton(“button 1”));
+panelB.add(new JButton(“button 2”));
+panelB.add(new JButton(“button 3”));
+panelA.add(panelB);
+```
+
+
