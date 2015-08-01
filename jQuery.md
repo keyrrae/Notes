@@ -18,3 +18,6 @@ for (var n = 0; n < elements.length; n++) {
 
 Using jQuery:
 `var checkedValue = $('[name="someRadioGroup"]:checked').val();`
+
+
+At its core, jQuery focuses on retrieving elements from HTML pages and performing operations upon them. 
