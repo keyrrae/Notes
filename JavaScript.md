@@ -16,7 +16,18 @@ Place JavaScript code between `<script>` and `</script>` HTML tags
 </html>
 ```
 
+Supporting non-JavaScript browsers
 
+```html
+<html>
+<head><title>Hello World</title></head>
+<body>
+<script type="text/javascript"><!--
+document.write("Hello World")
+// --></script>
+</body>
+</html>
+```
 
 ```javascript
 <!DOCTYPE html>
