@@ -53,6 +53,9 @@ Marks
 </html>
 ```
 
+
+
+
 ```bash
 $ traceroute www.ucsb.edu
 ```
@@ -68,3 +71,92 @@ p { color: #ff0000; }
 
 p { color: rgb(255,0,0); }
 p { color: rgb(100%,0%,0%); }
+
+
+# Introduction to CSS
+
+Cascading Style Sheets(CSS)
+
+```html
+<style>
+  h1 {color:red; font-size:3em; font-family:Arial;}
+</style>
+```
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <style>
+        h1 { color:red; font-size:3em; font-family:Arial; }
+    </style>
+  </head>
+  <body>
+    <h1>Hello there</h1>
+  </body>
+</html>
+```
+
+## Importing a Style Sheet
+
+```html
+<style>
+  @import url('styles.css');
+</style>
+```
+
+## Importing a Style Sheet from Within HTML
+
+```html
+<link rel='stylesheet' type='text/css' href='styles.css' />
+```
+
+## Embedded Style Settings
+```html
+<div style='font-style:italic; color:blue;'>Hello there</div>
+```
+
+## Using IDs
+
+A better solution for setting the style of an element is to assign an ID to it in the HTML
+
+```html
+<div id='iblue'>Hello there</div>
+```
+In CSS:
+```html
+#iblue {font-style:italic; color:blue;}
+```
+
+## Using Classes
+
+```html
+<div class='iblue'>Hello</div>
+```
+
+In CSS:
+```html
+.iblue { font-style:italic; color:blue; }
+```
+
+## CSS Rules
+
+```html
+h1 {font-size:240%;}
+```
+
+### Using Semicolons
+### Multiple Assignments
+
+```html
+h1 { font-size:240%; color:blue; }
+
+h1 { font-size:240%;
+color:blue; }
+
+h1 {
+    font-size:240%;
+    color:blue;
+}
+```
