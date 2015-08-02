@@ -36,8 +36,183 @@ Application protocols(OSI layer 7)
 SMTP HTTP SSH
 
 Other Protocols
--ARP Address Resolution Protocol
--RARP Reverse Address Resolution Protocol
+- ARP Address Resolution Protocol
+- RARP Reverse Address Resolution Protocol
 
 IP Addresses
--Each host has on or more IP addresses *for each network inferface*
+- Each host has on or more IP addresses *for each network inferface*
+- IPv4 addresses are composed of 32 bit class+netid+hostid
+- Represented in dotted-decimal notation: 128.111.48.69
+- classes
+class A netid=7bit()
+- Class A (0): netid=7 bit (128 networks, actually 1-126), hostid=24 bit
+(16777216 hosts)
+- Class B (10): netid=14 bit (16384 networks), hostid=16 bit (65536 hosts)
+- Class C (110): netid=21 bit (2097152 networks), hostid=8 bit (256 hosts)
+- Class D - Multicast (1110): multicast addresses
+- Class E (1111): reserved or future use
+
+## Special Addresses
+As source and destination address
+- Loopback interface: 127.X.X.X
+(usually 127.0.0.1)
+- As source address
+- netid=0, hostid=0 or hostid=XXX: this host on this net (used in special
+cases, such as booting procedures)
+- As destination address
+- All bits set to 1: local broadcast
+- netid + hostid with all bits set to 1: net-directed broadcast to netid
+
+- Reserved addresses (RFC 1597):
+10.0.0.0 - 10.255.255.255
+172.16.0.0 - 172.31.255.255
+192.168.0.0 - 192.168.255.255
+
+##Classless Inter-Domain Routing(CIDR)
+- Allocation of large chunks of IP addresses wasted an enormous
+number of IP addresses
+- Number of hosts is increasing
+- IPv6 provides a larger address space but it is not ubiquitously
+implemented
+- CIDR is a new addressing scheme for the Internet which allows
+for more efficient allocation of IP addresses than the old “Class
+A, B, and C” address scheme
+- The netid/hostid boundary can be placed on any bit between 13
+and 27
+- 32 hosts minimum
+- 524,288 hosts maximum
+
+## Internet Protocol
+- The IP protocol represents the “glue” of the Internet
+- The IP protocol provides a connectionless, unreliable, best-effort
+datagram delivery service (delivery, integrity, ordering, non-
+duplication, and bandwidth is not guaranteed)
+- IP datagrams can be exchanged between any two nodes
+(provided they both have an IP address)
+- For direct communication IP relies on a number of different
+lower-level protocols, e.g., Ethernet, Token Ring, FDDI, RS-232
+
+## IP Header
+
+- Normal size: 20 bytes
+- Version (4 bits): current value=4 (IPv4)
+- Header length (4 bits): number of 32-bit words in the header,
+including options (max header size is 60 bytes)
+- Type of service (8 bits): priority (3 bits), quality of service (4 bits),
+and an unused bit
+- Total length (16 bits): datagram length in bytes (max size is
+65535 bytes)
+- Id (16 bits): unique identifier for the datagram (usually
+incremented by one)
+
+- Flags (3 bits) and offset (13 bits): used for fragmentation
+- Time To Live (8 bits): specifies the max number of hops in the
+delivery process
+- Protocol (8 bits): specifies the protocol encapsulated in the
+datagram data (e.g., TCP)
+- Header checksum (16 bits): checksum calculated over the IP
+header
+- Addresses (32+32 bits): IP addresses of the source and
+destination of the datagram
+
+## IP Options
+- Variable length
+- Identified by first byte
+- Security and handling restrictions: used in military applications
+- Record route : each router records its IP address
+- Time stamp : each router records its IP address and time
+- Source route : specifies a list of IP addresses that must be traversed by
+the datagram
+ Loose : some
+
+ Strict : all of them
+
+- Many others...
+
+## IP Encapsulation
+
+              IP header IP data
+Frame header  Frame data
+
+## IP: Direct Delivery
+
+If two hosts are in the same physical network the IP datagram is
+encapsulated in a lower level protocol and delivered directly
+
+## Ethernet
+- Widely-used link-layer protocol
+- uses CSMA/CD (Carrier Sense, Multiple Access with Collision Detection)
+- Destination Address: 48 bits (e.g., 09:45:FA:07:22:23)
+- Source Address: 48 bits
+- Type: 2 bytes (IP, ARP, RARP)
+- Data: Min 46 bytes (padding may be needed)  Max 1500 bytes
+- CRC: Cyclic Redundancy Check, 4 bytes
+
+## Ethernet Frame
+dest (6) src (6) type (2) data (46-1500) CRC (4)
+0800 IP datagram
+0806 ARP (28) PAD (18)
+0808 RARP (28) PAD (18)
+
+## Address Resolution Protocol
+- The address resolution protocol allows a host to map IP
+addresses to the link-level addresses associated with the peer’s
+hardware interface (e.g., Ethernet) to be used in direct delivery
+- ARP messages are encapsulated in the underlying link level
+protocol
+
+Host A wants to know the hardware address associated with IP
+address I b of host B
+•  A broadcasts a special message to all the hosts on the same
+physical link
+•  Host B answers with a message containing its own link-level
+address
+•  A keeps the answer in its cache (20 minutes)
+•  To optimize traffic, when A sends its request, A includes its own
+IP address
+•  The receiver of the ARP request will cache the requester
+mapping
+
+ARP Messages
+Hw type Prot type
+•
+•
+•
+•
+•
+Hw size
+Prot size Op Sender Ether Sender IP
+Target Ether
+Target IP
+Hardware (2 bytes), protocol (2 bytes), hardware size (1 byte),
+and protocol size (1 byte) specify the link and network
+addresses to be mapped (usually Ethernet and IP, respectively)
+[0x0001, 0x0800, 6, 4]
+OP field specifies if this is an ARP request or an ARP reply (1=
+ARP req, 2=ARP reply)
+Sender Ethernet/IP: data of the requester
+Target Ethernet: empty in a request
+Target IP: requested IP address
+
+
+
+
+## Local Area Network Attacks
+- Sniffing
+- Spoofing
+- Hijacking
+- ARP attacks
+- Goals
+Impersonation of a host
+
+Denial of service
+
+Access to information
+
+Tampering with delivery mechanisms
+
+## Network Sniffing
+•  Technique at the basis of many attacks
+•  The attacker sets his/her network interface in promiscuous
+mode
+•  Can access all the traffic on the segment
