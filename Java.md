@@ -82,6 +82,110 @@ name or give an improper signature. 2
 @SuppressWarnings, to turn off inappropriate compiler warnings. This annotation
 is allowed but not supported in earlier releases of Java SE5 (it was ignored).
 
+# Error Handling with Exceptions
+The basic philosophy of Java is that "badly formed code will not be run"
+
+```java
+if(t == null)
+  throw new NullPointerException();
+```
+
+Exception arguments
+
+```java
+throw new NullPointerException("t = null")
+```
+
+Catching an exception
+
+```java
+try {
+  // Code that might generate exceptions
+}
+```
+
+Exception handlers
+```java
+try{
+  // Code that might generate exceptions
+} catch(Type1 id1) {
+  // Handle exceptions of Type1
+} catch(Type2 id2){
+  // Handle exceptions of Type2
+} catch(Type3 id3){
+  // Handle exceptions of Type3
+}
+```
+
+Creating your own exceptions
+
+```java
+class SimpleException extends Exception{}
+
+public class InheritingExceptions {
+  public void f() throws SimpleException({
+    System.out.println("Throw SimpleException from f()");
+    throw new SimpleException();
+  }
+  public static void main(String[] args) {
+    InheritingExceptions sed = new InheritingExceptions();
+    try {
+      sed.f();
+    } catch(SimpleException e){
+      System.out.println("Caught it!");
+    }
+  }
+} /* Output:
+Throw SimpleException from f()
+Caught it!
+*/
+```
+
+
+# I/O
+
+## The **File** class
+
+A directory lister
+
+```java
+import java.util.regex.*;
+import java.io.*;
+import java.util.*;
+
+public class DirList {
+  public static void main(String[] args) {
+    File path = new File(".");
+    String[] list;
+    if(args.length == 0)
+      list = path.list();
+    else
+      list = path.list(new DirFilter(args[0]));
+    Arrays.sort(list, String.CASE_SENSITIVE_ORDER);
+    for(String dirItem : list)
+      System.out.println(dirItem);
+  }
+}
+
+public class DirFilter implements FilenameFilter{
+  private Pattern pattern;
+  public DirFilter(String regex){
+    pattern = Pattern.compile(regex);
+  }
+  public boolean accept(File dir, String name){
+    return pattern.matcher(name).matches();
+  }
+}
+
+```
+The **FilenameFilter** interface:
+
+```java
+public interface FilenameFilter {
+  boolean accept(File dir, String name);
+}
+```
+
 # Concurrency
 
 ## Defining tasks
@@ -134,7 +238,7 @@ public class SimpleGui1 {
         JFrame frame = new JFrame();
         JButton button = new JButton(“click me”);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         frame.getContentPane().add(button);
         frame.setSize(300,300);
         frame.setVisible(true);
@@ -156,5 +260,3 @@ panelB.add(new JButton(“button 2”));
 panelB.add(new JButton(“button 3”));
 panelA.add(panelB);
 ```
-
-
