@@ -159,4 +159,17 @@ h1 {
     font-size:240%;
     color:blue;
 }
+
+h1 { font-size: 240%; }
+h1 { color: blue; }
 ```
+What if you specified the same property to the same selector twice?
+```html
+
+h1 { color: red; }
+h1 { color: blue; }
+```
+The last value would apply
+
+### Comments
+`/*....*/`
