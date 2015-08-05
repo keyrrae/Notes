@@ -350,4 +350,11 @@ def _print_gauss():
   print [g.gauss(mu = 0, sigma=1) for i in range(100)]
 
 def _usage():
-  print "usage:"
+  print "usage: %s" % sys.argv[0]
+  print "Try 'python %s -h' for more information." % sys.argv[0]
+
+  def _help():
+    print "usage: %s" %sys.argv[0]
+    print "-h (--help)"
+    print "-v (--version)"
+    
