@@ -342,3 +342,12 @@ Extension('palindrome', ['palindrome2.c'])
 `$ python setup.py build_ext --inplace`
 
 ## Random Number Generation
+```python
+import random, sys, getopt
+
+def _print_gauss():
+  g = random.Random(1234)
+  print [g.gauss(mu = 0, sigma=1) for i in range(100)]
+
+def _usage():
+  print "usage:"
