@@ -216,3 +216,21 @@ Tampering with delivery mechanisms
 •  The attacker sets his/her network interface in promiscuous
 mode
 •  Can access all the traffic on the segment
+
+## Why Sniffing?
+•  Many protocols (FTP, POP, HTTP, IMAP) transfer authentication
+information in the clear
+•  By sniffing the traffic it is possible to collect usernames/
+passwords, files, mail, etc.
+•  Many tools available
+
+## Dsniff
+•  Collection of tools for network auditing and penetration testing
+•  dsniff, filesnarf, mailsnarf, msgsnarf, urlsnarf, and webspy
+passively monitor a network for interesting data (passwords, e-
+mail, files, etc.)
+•  arpspoof, dnsspoof, and macof facilitate the interception of
+network traffic normally unavailable to an attacker (e.g., due to
+layer-2 switching)
+•  sshmitm and webmitm implement active man-in-the-middle
+attacks against redirected SSH and HTTPS

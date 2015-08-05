@@ -339,4 +339,6 @@ Extension('palindrome', ['palindrome2.c'])
 ])
 ```
 
-python setup.py build_ext --inplace
+`$ python setup.py build_ext --inplace`
+
+## Random Number Generation
