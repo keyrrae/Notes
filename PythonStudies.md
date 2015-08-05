@@ -357,4 +357,12 @@ def _usage():
     print "usage: %s" %sys.argv[0]
     print "-h (--help)"
     print "-v (--version)"
-    
+
+  if _name_ == '_main_':
+    try:
+      opts, args, = getop.getopt(sys.argv[1:], "vh", ["version", "help", ])
+    except getopt.GetoptError:
+      _usage()
+      sys.exit(2)
+for o, a in opts:
+  if o in      
