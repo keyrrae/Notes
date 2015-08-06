@@ -428,6 +428,10 @@ Always ask compared to what
 
 
 Principle 2 : show causulity , mechanism, explanation, systematic structure
+
+what is your causal framework for thinking about a question?
+
+
 Exploratory Graphics
 
 
