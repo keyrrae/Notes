@@ -423,9 +423,11 @@ h5ls("example.h5")
 Principles of Analytic Graphics
 
 Principle 1: show comparisons
-
+evidence for a hypothesis is always relative to another competing hypothesis
+Always ask compared to what
 
 Exploratory Graphics
+
 
 Plotting Systems in R
 
