@@ -365,4 +365,12 @@ def _usage():
       _usage()
       sys.exit(2)
 for o, a in opts:
-  if o in      
+  if o in ("-h", "--help") :
+    _help()
+    sys.exit()
+  if o in ("-v", "--version"):
+    print "`%s`, Version 0.0.0" % sys.argv[0]
+    sys.exit()
+_print_gauss()
+_print_lognormal_variate()
+```
