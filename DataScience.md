@@ -422,6 +422,9 @@ h5ls("example.h5")
 ## Exploratory Analysis
 Principles of Analytic Graphics
 
+Principle 1: show comparisons
+
+
 Exploratory Graphics
 
 Plotting Systems in R
