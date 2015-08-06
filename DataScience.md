@@ -426,7 +426,10 @@ Principle 1: show comparisons
 evidence for a hypothesis is always relative to another competing hypothesis
 Always ask compared to what
 
+
+Principle 2 : show causulity , mechanism, explanation, systematic structure
 Exploratory Graphics
+
 
 
 Plotting Systems in R
