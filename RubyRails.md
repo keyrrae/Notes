@@ -1,4 +1,5 @@
 The rails new command created a new Rails app named MySite.
+
 `$ rails new MySite`
 
 The bundle install command installed all the software packages needed by the new Rails app.
@@ -47,3 +48,5 @@ end
 3.The router maps the URL to a controller action to handle the request.
 
 4.The controller action receives the request, and asks the model to fetch data from the database.
+
+
