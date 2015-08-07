@@ -453,7 +453,24 @@ relevance, and integrity of their content
 
 Exploratory Graphics
 
+`boxplot(pollution$pm25, col="blue")`
 
+`hist(pollution$pm25, col="green")`
+
+```r
+hist(pollution$pm25, col="green")
+rug(pollution$pm25)
+```
+
+```r
+hist(pollution$pm25, col="green", breaks=100)
+rug(pollution$pm25)
+```
+
+```r
+boxplot(pollution$pm25, col="blue")
+albine(h=12)
+```
 
 Plotting Systems in R
 
