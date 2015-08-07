@@ -431,6 +431,25 @@ Principle 2 : show causulity , mechanism, explanation, systematic structure
 
 what is your causal framework for thinking about a question?
 
+Principle 3: show multivariate data
+- multivariate = more than 2 variables
+- the real world is multivariate
+- Need to "escape flatland"
+
+
+Principle 4: Integration of evidence
+- Completely integrate words, numbers, images, diagrams
+- Data graphics should make use of many modes of data presentation
+- Don't let the tool drive the analysis
+
+Principle 5: Describe and document the evidence with appropriate labels, scales, sources, etc.
+
+- A data graphic should tell a complete story that is credible
+
+Principle 6: Content is king
+- analytical presentations ultimately stand or fall depending on the quality,
+relevance, and integrity of their content
+
 
 Exploratory Graphics
 
