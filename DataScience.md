@@ -472,6 +472,14 @@ boxplot(pollution$pm25, col="blue")
 albine(h=12)
 ```
 
+Overlaying Features
+```r
+hist(pollution$pm25, col="green")
+abline(v=12,lwd=2)
+abline(v=median(pollution$pm25),col="magenta",lwd=4)
+```
+
+
 Plotting Systems in R
 
 base
