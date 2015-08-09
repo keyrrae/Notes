@@ -452,6 +452,12 @@ relevance, and integrity of their content
 
 
 Exploratory Graphics
+```r
+
+library(datasets)
+hist(airquality$Ozone)
+## Draw a new plot
+```
 
 `boxplot(pollution$pm25, col="blue")`
 
@@ -551,6 +557,25 @@ library(ggplot2)
 data(mpg)
 qplot(displ, hwy, data = mpg)
 ```
+
+The Process of Making a Plot
+When making a plot one must first make a few considerations (not necessarily in this order):
+· Where will the plot be made? On the screen? In a file?
+· How will the plot be used?
+- Is the plot for viewing temporarily on the screen?
+- Will it be presented in a web browser?
+- Will it eventually end up in a paper that might be printed?
+- Are you using it in a presentation?
+· Is there a large amount of data going into the plot? Or is it just a few points?
+· Do you need to be able to dynamically resize the graphic?
+· What graphics system will you use: base, lattice, or ggplot2? These generally cannot be mixed.
+· Base graphics are usually constructed piecemeal, with each aspect of the plot handled
+separately through a series of function calls; this is often conceptually simpler and allows plotting
+to mirror the thought process
+· Lattice graphics are usually created in a single function call, so all of the graphics parameters
+have to specified at once; specifying everything at once allows R to automatically calculate the
+necessary spacings and font sizes.
+· ggplot2 combines
 
 Hierarchical clustering
 
