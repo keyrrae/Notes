@@ -459,6 +459,36 @@ hist(airquality$Ozone)
 ## Draw a new plot
 ```
 
+```r
+library(datasets)
+with(airquality, plot(Wind, Ozone))
+```
+
+```r
+library(datasets)
+airquality <- transform(airquality, Month = factor(Month))
+boxplot(Ozone ~ Month, airquality, xlab = "Month", ylab = "Ozone (ppb)")
+```
+Some Important Base Graphics Parameters
+Many base plotting functions share a set of parameters. Here are a few key ones:
+· pch : the plotting symbol (default is open circle)
+· lty : the line type (default is solid line), can be dashed, dotted, etc.
+· lwd : the line width, specified as an integer multiple
+· col : the plotting color, specified as a number, string, or hex code; the colors() function gives
+you a vector of colors by name
+· xlab : character string for the x-axis label
+· ylab : character string for the y-axis label
+
+The par() function is used to specify global graphics parameters that affect all plots in an R
+session. These parameters can be overridden when specified as arguments to specific plotting
+functions.
+· las : the orientation of the axis labels on the plot
+· bg : the background color
+· mar : the margin size
+· oma : the outer margin size (default is 0 for all sides)
+· mfrow : number of plots per row, column (plots are filled row-wise)
+· mfcol : number of plots per row, column (plots are filled column-wise)
+
 `boxplot(pollution$pm25, col="blue")`
 
 `hist(pollution$pm25, col="green")`
