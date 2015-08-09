@@ -513,6 +513,29 @@ column matrix); this function just connects the dots
 · title : add annotations to x, y axis labels, title, subtitle, outer margin
 · mtext : add arbitrary text to the margins (inner or outer) of the plot
 · axis : adding axis ticks/labels
+Base Plot with Annotation
+```r
+library(datasets)
+with(airquality, plot(Wind, Ozone))
+title(main = "Ozone and Wind in New York City")
+## Add a title
+```
+```r
+with(airquality, plot(Wind, Ozone, main = "Ozone and Wind in New York City"))
+with(subset(airquality, Month == 5), points(Wind, Ozone, col = "blue"))
+```
+
+```r
+with(airquality, plot(Wind, Ozone, main = "Ozone and Wind in
+type = "n"))
+with(subset(airquality, Month == 5), points(Wind, Ozone, col
+with(subset(airquality, Month != 5), points(Wind, Ozone, col
+legend("topright", pch = 1, col = c("blue", "red"), legend =
+New York City",
+= "blue"))
+= "red"))
+c("May", "Other Months"))
+```
 
 `boxplot(pollution$pm25, col="blue")`
 
