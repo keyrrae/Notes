@@ -507,13 +507,50 @@ with(pollution, plot(latitude, pm25, col = region))
 abline(h = 12, lwd = 2, lty = 2)
 ```
 
+Multiple Scatterplots
+```r
+par(mfrow = c(1, 2), mar = c(5, 4, 2, 1))
+with(subset(pollution, region == "west"), plot(latitude, pm25, main = "West"))
+with(subset(pollution, region == "east"), plot(latitude, pm25, main = "East"))
+```
+
 Plotting Systems in R
 
-base
+Base Plot
+```r
+library(datasets)
+data(cars)
+with(cars, plot(speed, dist))
+```
 
-lattice
+The Lattice System
 
-ggplot2
+- Plots are created with a single function call ( xyplot , bwplot , etc.)
+- Most useful for conditioning types of plots: Looking at how y changes with x across levels of z
+- Things like margins/spacing set automatically because entire plot is specified at once
+- Good for puttng many many plots on a screen
+- Sometimes awkward to specify an entire plot in a single function call
+- Annotation in plot is not especially intuitive
+- Use of panel functions and subscripts difficult to wield and requires intense preparation
+- Cannot "add" to the plot once it is created
+
+```r
+library(lattice)
+state <- data.frame(state.x77, region = state.region)
+xyplot(Life.Exp ~ Income | region, data = state, layout = c(4, 1))
+```
+
+The ggplot2 System
+- Splits the difference between base and lattice in a number of ways
+- Automatically deals with spacings, text, titles but also allows you to annotate by "adding" to a plot
+- Superficial similarity to lattice but generally easier/more intuitive to use
+- Default mode makes many choices for you (but you can still customize to your heart's desire)
+
+```r
+library(ggplot2)
+data(mpg)
+qplot(displ, hwy, data = mpg)
+```
 
 Hierarchical clustering
 
