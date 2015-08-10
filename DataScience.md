@@ -537,6 +537,23 @@ New York City",
 c("May", "Other Months"))
 ```
 
+Base Plot with Regression Line
+```r
+with(airquality, plot(Wind, Ozone, main = "Ozone and Wind in New York City",
+pch = 20))
+model <- lm(Ozone ~ Wind, airquality)
+abline(model, lwd = 2)
+```
+
+Multiple Base Plots
+```r
+par(mfrow = c(1, 2))
+with(airquality, {
+plot(Wind, Ozone, main = "Ozone and Wind")
+plot(Solar.R, Ozone, main = "Ozone and Solar Radiation")
+})
+```
+
 `boxplot(pollution$pm25, col="blue")`
 
 `hist(pollution$pm25, col="green")`
