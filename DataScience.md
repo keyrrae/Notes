@@ -594,6 +594,20 @@ windows() on a Mac)
 
 
 
+#### How Does a Plot Get Created?
+There are two basic approaches to plotting. The first is most common:
+1. Call a plotting function like plot , xyplot , or qplot
+2. The plot appears on the screen device
+3. Annotate plot if necessary
+4. Enjoy
+
+```r
+library(datasets)
+with(faithful, plot(eruptions, waiting))
+title(main = "Old Faithful Geyser data")
+## Make plot appear on screen device
+## Annotate with a title
+```
 
 
 `boxplot(pollution$pm25, col="blue")`
