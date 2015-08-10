@@ -554,6 +554,48 @@ plot(Solar.R, Ozone, main = "Ozone and Solar Radiation")
 })
 ```
 
+```r
+par(mfrow = c(1, 3), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
+with(airquality, {
+plot(Wind, Ozone, main = "Ozone and Wind")
+plot(Solar.R, Ozone, main = "Ozone and Solar Radiation")
+plot(Temp, Ozone, main = "Ozone and Temperature")
+mtext("Ozone and Weather in New York City", outer = TRUE)
+})
+```
+
+
+### Graphics Devices in R
+
+#### What is a Graphics Device?
+
+A graphics device is something where you can make a plot appear
+- A window on your computer (screen device)
+- A PDF file (file device)
+- A PNG or JPEG file (file device)
+- A scalable vector graphics (SVG) file (file device)
+· When you make a plot in R, it has to be "sent" to a specific graphics device
+· The most common place for a plot to be "sent" is the screen device
+- On a Mac the screen device is launched with the quartz()
+- On Windows the screen device is launched with windows()
+- On Unix/Linux the screen device is launched with x11()
+When making a plot, you need to consider how the plot will be used to determine what device the
+plot should be sent to.
+- The list of devices is found in ?Devices ; there are also devices created by users on CRAN
+· For quick visualizations and exploratory analysis, usually you want to use the screen device
+- Functions like plot in base, xyplot in lattice, or qplot in ggplot2 will default to sending a
+plot to the screen device
+- On a given platform (Mac, Windows, Unix/Linux) there is only one screen device
+· For plots that may be printed out or be incorporated into a document (e.g. papers/reports, slide
+presentations), usually a file device is more appropriate
+- There are many different file devices to choose from
+· NOTE: Not all graphics devices are available on all platforms (i.e. you cannot launch the
+windows() on a Mac)
+
+
+
+
+
 `boxplot(pollution$pm25, col="blue")`
 
 `hist(pollution$pm25, col="green")`
