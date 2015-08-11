@@ -563,8 +563,33 @@ plot(Temp, Ozone, main = "Ozone and Temperature")
 mtext("Ozone and Weather in New York City", outer = TRUE)
 })
 ```
+How Does a Plot Get Created?
 
+The second approach to plotting is most commonly used for file devices:
+1. Explicitly launch a graphics device
+2. Call a plotting function to make a plot (Note: if you are using a file device, no plot will appear on
+the screen)
+3. Annotate plot if necessary
+4. Explicitly close graphics device with dev.off() (this is very important!)
+```r
+pdf(file = "myplot.pdf") ## Open PDF device; create 'myplot.pdf' in my working directory
+## Create plot and send to a file (no plot appears on screen)
+with(faithful, plot(eruptions, waiting))
+title(main = "Old Faithful Geyser data") ## Annotate plot; still nothing on screen
+dev.off() ## Close the PDF file device
+## Now you can view the file 'myplot.pdf' on your computer
+```
 
+Graphics File Devices
+There are two basic types of file devices: vector and bitmap devices
+Vector formats:
+· pdf : useful for line-type graphics, resizes well, usually portable, not efficient if a plot has many
+objects/points
+· svg : XML-based scalable vector graphics; supports animation and interactivity, potentially useful
+for web-based plots
+· win.metafile : Windows metafile format (only on Windows)
+· postscript : older format, also resizes well, usually portable, can be used to create
+encapsulated postscript files; Windows systems often don’t have a postscript viewer
 ### Graphics Devices in R
 
 #### What is a Graphics Device?
