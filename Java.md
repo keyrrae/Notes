@@ -269,6 +269,12 @@ public interface FilenameFilter {
 }
 ```
 
+# Enumerated Types
+
+```java
+ import static net.mindview.util.Print.*;
+enum Shrubbery { GROUND, CRAWLING, HANGING }
+```
 # Concurrency
 
 ## Defining tasks
