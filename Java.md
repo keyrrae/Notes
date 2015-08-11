@@ -141,6 +141,25 @@ Caught it!
 */
 ```
 
+# Strings
+
+Objects of the **String** class are immutable.
+
+# Type Information
+Runtime type information (RTTI) allows you to discover and use
+type information while a program is running.
+
+```java
+import java.util.*
+
+abstract class Shape{
+  void draw(){
+    System.out.println(this + ".draw()");
+  }
+}
+```
+
+
 
 # I/O
 

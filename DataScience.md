@@ -609,6 +609,22 @@ title(main = "Old Faithful Geyser data")
 ## Annotate with a title
 ```
 
+The second approach to plotting is most commonly used for file devices:
+1. Explicitly launch a graphics device
+2. Call a plotting function to make a plot (Note: if you are using a file device, no plot will appear on
+the screen)
+3. Annotate plot if necessary
+4. Explicitly close graphics device with dev.off() (this is very important!)
+
+```r
+pdf(file = "myplot.pdf") ## Open PDF device; create 'myplot.pdf' in my working directory
+## Create plot and send to a file (no plot appears on screen)
+with(faithful, plot(eruptions, waiting))
+title(main = "Old Faithful Geyser data") ## Annotate plot; still nothing on screen
+dev.off() ## Close the PDF file device
+## Now you can view the file 'myplot.pdf' on your computer
+```
+
 
 `boxplot(pollution$pm25, col="blue")`
 

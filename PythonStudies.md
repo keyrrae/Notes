@@ -374,3 +374,8 @@ for o, a in opts:
 _print_gauss()
 _print_lognormal_variate()
 ```
+
+```python
+
+
+```
