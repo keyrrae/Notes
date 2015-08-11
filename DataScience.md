@@ -592,6 +592,8 @@ for web-based plots
 encapsulated postscript files; Windows systems often don’t have a postscript viewer
 ### Graphics Devices in R
 
+
+
 #### What is a Graphics Device?
 
 A graphics device is something where you can make a plot appear
@@ -616,10 +618,50 @@ presentations), usually a file device is more appropriate
 - There are many different file devices to choose from
 · NOTE: Not all graphics devices are available on all platforms (i.e. you cannot launch the
 windows() on a Mac)
+Graphics File Devices
+There are two basic types of file devices: vector and bitmap devices
+Vector formats:
+· pdf : useful for line-type graphics, resizes well, usually portable, not efficient if a plot has many
+objects/points
+· svg : XML-based scalable vector graphics; supports animation and interactivity, potentially useful
+for web-based plots
+· win.metafile : Windows metafile format (only on Windows)
+· postscript : older format, also resizes well, usually portable, can be used to create
+encapsulated postscript files; Windows systems often don’t have a postscript viewer
 
+Bitmap formats
+· png : bitmapped format, good for line drawings or images with solid colors, uses lossless
+compression (like the old GIF format), most web browsers can read this format natively, good for
+plotting many many many points, does not resize well
+· jpeg : good for photographs or natural scenes, uses lossy compression, good for plotting many
+many many points, does not resize well, can be read by almost any computer and any web
+browser, not great for line drawings
+· tiff : Creates bitmap files in the TIFF format; s
 
+Graphics File Devices
+There are two basic types of file devices: vector and bitmap devices
+Vector formats:
+· pdf : useful for line-type graphics, resizes well, usually portable, not efficient if a plot has many
+objects/points
+· svg : XML-based scalable vector graphics; supports animation and interactivity, potentially useful
+for web-based plots
+· win.metafile : Windows metafile format (only on Windows)
+· postscript : older format, also resizes well, usually portable, can be used to create
+encapsulated postscript files; Windows systems often don’t have a postscript viewer
 
-#### How Does a Plot Get Created?
+Copying Plots
+Copying a plot to another device can be useful because some plots require a lot of code and it can
+be a pain to type all that in again for a different device.
+· dev.copy : copy a plot from one device to another
+· dev.copy2pdf : specifically copy a plot to a PDF file
+NOTE: Copying a plot is not an exact operation, so the result may not be identical to the original.
+library(datasets)
+with(faithful, plot(eruptions, waiting)) ## Create plot on screen device
+title(main = "Old Faithful Geyser data") ## Add a main title
+dev.copy(png, file = "geyserplot.png") ## Copy my plot to a PNG file
+dev.off() ## Don't forget to close the PNG device!``
+
+#### How Does a Plot Get Created?``
 There are two basic approaches to plotting. The first is most common:
 1. Call a plotting function like plot , xyplot , or qplot
 2. The plot appears on the screen device
