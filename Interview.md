@@ -5,7 +5,7 @@ you to ask questions. This part of the interview is targeted not only at getting
 but also at relaxing you.
 Be Specific, Not Arr
 
-
+```java
 public HashMap<Integer, Student> buildMap(Student[] students) {
 
 HashMap<Integer, Student> map = new HashMap<Integer, Student>();
@@ -14,8 +14,9 @@ for (Student s : students) map.put(s.getId(), s);
 
 return map;
 }
+```
 
-
+```java
 public String makeSentence(String[] words) {
 
 StringBuffer sentence = new StringBuffer();
@@ -24,8 +25,10 @@ for (String w : words) sentence.append(w);
 
 return sentence.toString();
 }
+```
 
 
+```java
 class Node {
 
 Node next = null;
@@ -46,8 +49,10 @@ n.next = end;
 
 }
 }
+```
 
 
+```java
 class Stack {
 
 Node top;
@@ -78,8 +83,10 @@ top = t;
 
 }
 }
+```
+C++ pointer syntax
 
-
+```cpp
 int
 p =
 v =
@@ -90,6 +97,7 @@ int
 *p; // Set v to value of q.
 *f = new Foo(); // Initializes f.
 k = f->x; // Sets k equal to the value of f’s member variable.
+```
 
 
 A very common question in an interview is “describe the differences between C++ and Java.”
