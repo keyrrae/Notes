@@ -1485,3 +1485,19 @@ Model: an attempt to describe or capture the world
 statistical models
 
 machine learning algorithms
+
+```
+> model <- lm (y~x)
+> model
+Call:
+lm(formula = y ~ x)
+Coefficients:
+(Intercept)
+-32.08
+x
+45.92
+> coefs <- coef(model)
+> plot(x, y, pch=20,col="red", xlab="Number new friends",
+ylab="Time spent (seconds)")
+> abline(coefs[1],coefs[2])
+```
