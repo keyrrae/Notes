@@ -163,6 +163,36 @@ echo $herbie->model;
 ?>
 ```
 
+```php
+<?php
+$t=date("H");
+if ($t<"20")
+{
+echo "Have a good day!";
+}
+?>
+```
+
+```php
+<?php
+$favcolor="red";
+switch ($favcolor)
+{
+case "red":
+echo "Your favorite color is red!";
+break;
+case "blue":
+echo "Your favorite color is blue!";
+break;
+case "green":
+echo "Your favorite color is green!";
+break;
+default:
+echo "Your favorite color is neither red, blue, or green!";
+}
+?>
+```
+
 `createTable`
 Checks whether a table exists and, if not, create it.
 
