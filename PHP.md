@@ -193,6 +193,39 @@ echo "Your favorite color is neither red, blue, or green!";
 ?>
 ```
 
+```html
+
+<html>
+<body>
+
+<?php
+$i=1;
+while($i<=5)
+{
+echo "The number is " . $i . "<br>";
+$i++;
+}
+?>
+
+</body>
+</html>
+```
+
+```html
+<html>
+<body>
+
+<?php
+for ($i=1; $i<=5; $i++)
+{
+echo "The number is " . $i . "<br>";
+}
+?>
+
+</body>
+</html>
+```
+
 `createTable`
 Checks whether a table exists and, if not, create it.
 
