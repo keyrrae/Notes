@@ -226,6 +226,22 @@ echo "The number is " . $i . "<br>";
 </html>
 ```
 
+```html
+<html>
+<body>
+
+<?php
+$x=array("one","two","three");
+foreach ($x as $value)
+{
+echo $value . "<br>";
+}
+?>
+
+</body>
+</html>
+```
+
 `createTable`
 Checks whether a table exists and, if not, create it.
 
