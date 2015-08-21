@@ -230,14 +230,8 @@ pg 89
 SOLUTION
 This is a classic interview problem. If you haven’t heard this problem before, you can ap-
 proach it by taking the difference between a and b:
-1
-2
-3
-4
-5
-6
-7
-8
+```java
+
 public static void swap(int a, int b) {
 
 a = b - a; // 9 - 5 = 4
@@ -251,16 +245,11 @@ System.out.println(“a: “ + a);
 
 System.out.println(“b: “ + b);
 }
-You can then optimize it as follows:
-1
-2
-3
-4
-5
-6
-7
-8
+```
 
+You can then optimize it as follows:
+
+```java
 public static void swap_opt(int a, int b) {
 
 a = a^b;
@@ -274,3 +263,4 @@ System.out.println(“a: “ + a);
 
 System.out.println(“b: “ + b);
 }
+```
