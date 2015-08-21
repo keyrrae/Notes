@@ -142,3 +142,21 @@ block will still be executed.
 Note: There are some cases in which the finally block will not get executed: if the
 virtual machine exits in between try/catch block execution, or the thread which
 is executing try/catch block gets killed.
+
+
+14.3	 What is the difference between final, finally, and finalize?
+
+pg 78
+SOLUTIONS
+Final
+When applied to a variable (primitive): The value of the variable cannot change.
+When applied to a variable (reference): The reference variable cannot point to any other ob-
+ject on the heap.
+When applied to a method: The method cannot be overridden.
+When applied to a class: The class cannot be subclassed.
+Finally
+There is an optional finally block after the try block or after the catch block. Statements in the
+finally block will always be executed (except if JVM exits from the try block). The finally block
+is used to write the clean up code.
+Finalize
+This is the method that the JVM runs before running the garbage collector.
