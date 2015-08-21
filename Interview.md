@@ -160,3 +160,50 @@ finally block will always be executed (except if JVM exits from the try block). 
 is used to write the clean up code.
 Finalize
 This is the method that the JVM runs before running the garbage collector.
+
+
+14.5	 Explain what object reflection is in Java and why it is useful.
+
+pg 78
+SOLUTION
+Object Reflection is a feature in Java which provides a way to get reflective information about
+Java classes and objects, such as:
+1.	 Getting information about methods and fields present inside the class at run time.
+2.	 Creating a new instance of a class.
+3.	 Getting and setting the object fields directly by getting field reference, regardless of
+what the access modifier is.
+
+```java
+	 import java.lang.reflect.*;
+public class Sample {
+
+public static void main(String args[]) {
+
+try {
+
+Class c = Class.forName(“java.sql.Connection”);
+
+Method m[] = c.getDeclaredMethods();
+
+for (int i = 0; i < 3; i++) {
+
+System.out.println(m[i].toString());
+
+}
+
+} catch (Throwable e) {
+
+System.err.println(e);
+
+}
+
+}
+}
+```
+
+This code’s output is the names of the first 3 methods inside the “java.sql.Connection” class
+(with fully qualified parameters).
+Why it is useful:
+1.	 Helps in observing or manipulating the runtime behavior of applications.
+2.	 Useful while debugging and testing applications, as it allows direct access to methods,
+constructors, fields, etc.
