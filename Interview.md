@@ -122,3 +122,23 @@ abstract:
 » » Class: Contains abstract methods. Can not be instantiated.
 » » Interface: All interfaces are implicitly abstract. This modifier is optional.
 » » Method: Method without a body. Class must also be abstract.
+
+14.1	 In terms of inheritance, what is the effect of keeping a constructor private?
+
+SOLUTION
+Declaring the constructor private will ensure that no one outside of the class can directly in-
+stantiate the class. In this case, the only way to create an instance of the class is by providing
+a static public method, as is done when using the Factory Method Pattern.
+Additionally, because the constructor is private, the class also cannot be inherited.
+
+In Java, does the finally block gets executed if we insert a return statement inside the
+try block of a try-catch-finally?
+
+SOLUTION
+Yes, it will get executed.
+The finally block gets executed when the try block exists. However, even when we attempt
+to exit within the try block (normal exit, return, continue, break or any exception), the finally
+block will still be executed.
+Note: There are some cases in which the finally block will not get executed: if the
+virtual machine exits in between try/catch block execution, or the thread which
+is executing try/catch block gets killed.
