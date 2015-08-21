@@ -207,3 +207,70 @@ Why it is useful:
 1.	 Helps in observing or manipulating the runtime behavior of applications.
 2.	 Useful while debugging and testing applications, as it allows direct access to methods,
 constructors, fields, etc.
+
+
+14.6	 Suppose you are using a map in your program, how would you count the number of
+times the program calls the put() and get() functions?
+
+pg 78
+SOLUTION
+One simple solution is to put count variables for get() and put() methods and, whenever they
+are called, increment the count. We can also achieve this by extending the existing library
+map and overriding the get() and put() functions.
+At first glance, this seems to work. However, what if we created multiple instances of the
+map? How would you sum up the total count for each map object?
+The simplest solution for this is to keep the count variables static. We know static variables
+have only one copy for all objects of the class so the total count would be reflected in count
+variables.
+
+
+19.1	 Write a function to swap a number in place without temporary variables.
+
+pg 89
+SOLUTION
+This is a classic interview problem. If you haven’t heard this problem before, you can ap-
+proach it by taking the difference between a and b:
+1
+2
+3
+4
+5
+6
+7
+8
+public static void swap(int a, int b) {
+
+a = b - a; // 9 - 5 = 4
+
+b = b - a; // 9 - 4 = 5
+
+a = a + b; // 4 + 5 = 9
+
+
+System.out.println(“a: “ + a);
+
+System.out.println(“b: “ + b);
+}
+You can then optimize it as follows:
+1
+2
+3
+4
+5
+6
+7
+8
+
+public static void swap_opt(int a, int b) {
+
+a = a^b;
+
+b = a^b;
+
+a = a^b;
+
+
+System.out.println(“a: “ + a);
+
+System.out.println(“b: “ + b);
+}
