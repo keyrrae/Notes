@@ -368,3 +368,21 @@ service is assumed to be unavailable
 •  Many TCP/IP stack implementations (not Windows’!) implement
 a limit on the error message rate, therefore this type of scan
 can be slow (e.g., Linux limit is 80 messages every 4 seconds)
+
+UDP Portscan
+```
+% nmap -sU 192.168.1.10
+Starting nmap by fyodor@insecure.org ( www.insecure.org/nmap/ )
+Interesting ports on (192.168.1.10):
+(The 1445 ports scanned but not shown below are in state: closed)
+Port
+State
+Service
+137/udp
+open
+netbios-ns
+138/udp
+open
+netbios-dgm
+Nmap run completed -- 1 IP address (1 host up) scanned in 4 seconds
+```
