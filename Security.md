@@ -336,3 +336,15 @@ guaranteed)
 different message destinations for the same IP address
 •  Often used for multimedia (more efficient than TCP) and for
 services based on request/reply schema (DNS, NIS, NFS, RPC)
+
+## Network Information Service
+•  Centralized database used to manage administrative files
+(passwords, host tables) in a subnetwork
+•  The NIS is composed of
+–  Domains
+–  Maps
+–  Daemons
+•  NIS was formerly known as Sun Yellow Pages (YP) but the name
+Yellow Pages(tm) is a registered trademark in the United
+Kingdom of British Telecom and may not be used without
+permission
