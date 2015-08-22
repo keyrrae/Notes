@@ -348,3 +348,13 @@ services based on request/reply schema (DNS, NIS, NFS, RPC)
 Yellow Pages(tm) is a registered trademark in the United
 Kingdom of British Telecom and may not be used without
 permission
+
+## NIS Server Hijacking
+•  By racing against a legitimate NIS server it is possible to provide
+a modified version of the password map during the login process
+•  Attack described in “ A Unix Network Protocol Security Study:
+Network Information Service” , David K. Hess, David R. Safford,
+Udo W. Pooch
+•  ypghost (http://www.unix.geek.org.uk/~arny/progs/ypghost/
+ypghost.html) is a tool that listens for passwd map requests and
+replies with the “ghost” version of the map
