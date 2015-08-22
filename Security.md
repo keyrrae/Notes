@@ -234,3 +234,16 @@ network traffic normally unavailable to an attacker (e.g., due to
 layer-2 switching)
 •  sshmitm and webmitm implement active man-in-the-middle
 attacks against redirected SSH and HTTPS
+
+
+##ICMP Redirect
+•  A host that receives an ICMP redirect message performs the
+following checks:
+
+The new router must be on a directly connected network
+
+The redirect must be from the current router for that destination
+
+The redirect cannot tell the host to use itself as the router
+
+The route that is being modified must be an indirect route

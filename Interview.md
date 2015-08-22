@@ -87,8 +87,7 @@ top = t;
 C++ pointer syntax
 
 ```cpp
-int
-p =
+int p =
 v =
 Foo
 int
