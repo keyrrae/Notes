@@ -1,0 +1,10 @@
+# digress
+# tacit
+# incongruous
+# diurnal
+# solicitous
+# adroit
+# laudable
+# pontificate
+# deleterious
+# fallacious
