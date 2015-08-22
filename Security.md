@@ -301,9 +301,27 @@ cannot be delivered
 •  Many subtypes
 
 Network unreachable
+
 Host unreachable
+
 Protocol unreachable
+
 Port unreachable
+
 Fragmentation needed but don’t fragment bit set
+
 Destination host unknown
+
 Destination network unknown
+
+Traceroute
+•  ICMP Time Exceeded messages are used by the traceroute
+program to determine the path used to deliver a datagram
+•  A series of IP datagrams are sent to the destination node
+•  Each datagram has an increasing TTL field (starting at 1)
+•  From the ICMP Time exceeded messages returned by the
+intermediate gateways it is possible to reconstruct the route
+from the source to the destination
+•  Note: traceroute allows one to specify loose source routing (-g
+option)
+•  Useful for network analysis, topology mapping
