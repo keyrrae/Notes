@@ -247,3 +247,63 @@ The redirect must be from the current router for that destination
 The redirect cannot tell the host to use itself as the router
 
 The route that is being modified must be an indirect route
+
+
+
+## ICMP Redirect Attacks
+```bash
+# arp -n
+Address
+HWtype HWaddress
+192.168.1.1
+ether
+00:20:78:CA:7E:AE
+192.168.1.10
+ether
+00:01:03:1D:98:B8
+192.168.1.100
+ether
+08:00:46:07:04:A3
+C:\WINDOWS>route PRINT
+Active Routes:
+Network Address
+Netmask Gateway Address
+Interface
+0.0.0.0
+0.0.0.0
+192.168.1.1
+192.168.1.10
+127.0.0.0
+255.0.0.0
+127.0.0.1
+127.0.0.1
+192.168.1.0
+255.255.255.0
+192.168.1.10
+192.168.1.10
+192.168.1.10 255.255.255.255
+127.0.0.1
+127.0.0.1
+192.168.1.255 255.255.255.255
+192.168.1.10
+192.168.1.10
+# tcpdump -n
+8:0:46:7:4:a3 0:1:3:1d:98:b8 0800 70: 192.168.1.1 > 192.168.1.10:
+icmp: redirect 128.111.48.69 to host 192.168.1.100
+
+```
+
+
+
+ICMP Destination Unreachable
+•  ICMP message used by gateways to state that the datagram
+cannot be delivered
+•  Many subtypes
+
+Network unreachable
+Host unreachable
+Protocol unreachable
+Port unreachable
+Fragmentation needed but don’t fragment bit set
+Destination host unknown
+Destination network unknown
