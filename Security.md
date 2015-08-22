@@ -358,3 +358,13 @@ Udo W. Pooch
 •  ypghost (http://www.unix.geek.org.uk/~arny/progs/ypghost/
 ypghost.html) is a tool that listens for passwd map requests and
 replies with the “ghost” version of the map
+
+
+## UDP Portscan
+•  Used to determine which UDP services are available
+•  A zero-length UDP packet is sent to each port
+•  If an ICMP error message “port unreachable” is received the
+service is assumed to be unavailable
+•  Many TCP/IP stack implementations (not Windows’!) implement
+a limit on the error message rate, therefore this type of scan
+can be slow (e.g., Linux limit is 80 messages every 4 seconds)
