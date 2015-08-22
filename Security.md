@@ -314,7 +314,7 @@ Destination host unknown
 
 Destination network unknown
 
-Traceroute
+## Traceroute
 •  ICMP Time Exceeded messages are used by the traceroute
 program to determine the path used to deliver a datagram
 •  A series of IP datagrams are sent to the destination node
@@ -325,3 +325,14 @@ from the source to the destination
 •  Note: traceroute allows one to specify loose source routing (-g
 option)
 •  Useful for network analysis, topology mapping
+
+
+## User Datagram Protocol (UDP)
+•  The UDP protocol relies on IP to provide a connectionless ,
+unreliable, best-effort datagram delivery service (delivery,
+integrity, non-duplication, ordering, and bandwidth is not
+guaranteed)
+•  Introduces the port abstraction that allows one to address
+different message destinations for the same IP address
+•  Often used for multimedia (more efficient than TCP) and for
+services based on request/reply schema (DNS, NIS, NFS, RPC)
