@@ -132,3 +132,18 @@ saturnine
 optimistic
 jovial
 sanguine
+
+sullen morose
+
+#adept
+skilled
+
+deft
+dexterous
+
+#congenial
+sympathetic, kindred, harmonious
+
+alien
+dissident
+incongruous
