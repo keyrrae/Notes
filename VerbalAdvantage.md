@@ -120,3 +120,15 @@ frankness, openness, sincere expression
 synonyms:straightforwardness, outspokenness, forthrightness, and ingenuousness
 
 candor is the noun, the adjective is candid
+
+# morose
+
+gloomy, moody, glum, grumpy, ill-tempered
+
+dolorous
+lugubrious
+saturnine
+
+optimistic
+jovial
+sanguine
