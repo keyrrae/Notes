@@ -1,5 +1,7 @@
 # digress
 wander
+
+
 # creed
 belief
 
@@ -99,3 +101,22 @@ aging
 
 #assiduous
 industrious
+
+#ostensible
+
+apparent
+
+specious:using deception to make something false appear true
+
+ostensible is often used in opposition to real or actual
+
+apparent, stated as true but not necessarily proved.
+
+# uncanny
+eerie strange, weird
+
+#candor
+frankness, openness, sincere expression
+synonyms:straightforwardness, outspokenness, forthrightness, and ingenuousness
+
+candor is the noun, the adjective is candid
