@@ -386,3 +386,18 @@ open
 netbios-dgm
 Nmap run completed -- 1 IP address (1 host up) scanned in 4 seconds
 ```
+
+
+
+#Transmission Control Protocol (TCP)
+•  The TCP protocol relies on IP to provide a connection-oriented,
+reliable stream delivery service (no loss, no duplication, no
+transmission errors, correct ordering)
+•  TCP, as UDP, provides the port abstraction
+•  TCP allows two nodes to establish a virtual circuit, identified by
+source IP address, destination IP address, source TCP port,
+destination TCP port
+•  The virtual circuit is composed of two streams (full-duplex
+connection)
+•  The couple IP address/port number is sometimes called a
+socket (and the two streams are called a socket pair )
