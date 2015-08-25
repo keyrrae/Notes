@@ -389,7 +389,7 @@ Nmap run completed -- 1 IP address (1 host up) scanned in 4 seconds
 
 
 
-#Transmission Control Protocol (TCP)
+## Transmission Control Protocol (TCP)
 •  The TCP protocol relies on IP to provide a connection-oriented,
 reliable stream delivery service (no loss, no duplication, no
 transmission errors, correct ordering)
@@ -401,3 +401,16 @@ destination TCP port
 connection)
 •  The couple IP address/port number is sometimes called a
 socket (and the two streams are called a socket pair )
+
+
+## TCP Seq/Ack Numbers
+•  The sequence number specifies the position of the segment
+data in the communication stream
+(SYN=13423 means: the payload of this segment contains the
+data from byte 13423 to byte 13458 )
+•  The acknowledgment number specifies the position of the next
+byte expected from the communication partner
+(ACK = 16754 means: I have received correctly up to byte
+16753 in the stream, I expect the next byte to be 16754 )
+•  These numbers are used to manage retransmission of lost
+segments, duplication, flow control
