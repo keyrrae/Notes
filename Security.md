@@ -414,3 +414,13 @@ byte expected from the communication partner
 16753 in the stream, I expect the next byte to be 16754 )
 •  These numbers are used to manage retransmission of lost
 segments, duplication, flow control
+
+
+## TCP Window
+•  The TCP window is used to perform flow control
+•  Segment will be accepted only if their sequence numbers are
+inside the window that starts with the current acknowledgment
+number:
+ack number < sequence number < ack number + window
+•  The window size can change dynamically to adjust the amount of
+information sent by the sender
