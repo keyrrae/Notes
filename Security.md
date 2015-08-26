@@ -452,3 +452,12 @@ arp reply 192.168.1.20 is-at 0:10:4b:e2:f6:4c
 192.168.1.20.23 > 192.168.1.10.1026: S 4056577943:4056577943(0) ack 1015044
 192.168.1.10.1026 > 192.168.1.20.23: . ack 4056577944
 ```
+
+TCP Virtual Circuit: Data Exchange
+•  A partner sends in each packet the acknowledgment of the
+previous segment and its own sequence number increased of
+the number of transmitted bytes
+•  A partner accepts a segment of the other partner only if the
+numbers are inside the transmission window
+•  An empty segment may be used to acknowledge the received
+data
