@@ -436,3 +436,19 @@ and ACK flags and containing
 –  s c + 1 as the acknowledgment number
 •  The client sends a segment with the ACK flag set and with
 sequence number s c + 1 and acknowledgment number s s + 1
+
+What Initial Sequence Number?
+•  The TCP standard (RFC 793) specifies that the sequence
+number should be incremented every 4 microseconds
+•  BSD UNIX systems initially used a number that is incremented
+by 64,000 every half second (8 microseconds increments) and
+by 64,000 each time a connection is established
+
+TCP: Three-way Handshake
+```
+arp who-has 192.168.1.20 tell 192.168.1.10
+arp reply 192.168.1.20 is-at 0:10:4b:e2:f6:4c
+192.168.1.10.1026 > 192.168.1.20.23: S 1015043:1015043(0)
+192.168.1.20.23 > 192.168.1.10.1026: S 4056577943:4056577943(0) ack 1015044
+192.168.1.10.1026 > 192.168.1.20.23: . ack 4056577944
+```
