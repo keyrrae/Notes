@@ -424,3 +424,15 @@ number:
 ack number < sequence number < ack number + window
 •  The window size can change dynamically to adjust the amount of
 information sent by the sender
+
+TCP Virtual Circuit: Setup
+•  A server , listening to a specific port , receives a connection
+request from a client: The segment containing the request is
+marked with the SYN flag and contains a random initial
+sequence number s c
+•  The server answers with a segment marked with both the SYN
+and ACK flags and containing
+–  an initial random sequence number s s
+–  s c + 1 as the acknowledgment number
+•  The client sends a segment with the ACK flag set and with
+sequence number s c + 1 and acknowledgment number s s + 1
