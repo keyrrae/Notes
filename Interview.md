@@ -263,3 +263,167 @@ System.out.println(“a: “ + a);
 System.out.println(“b: “ + b);
 }
 ```
+19.2	 Design an algorithm to figure out if someone has won in a game of tic-tac-toe.
+
+pg 89
+SOLUTION
+The first thing to ask your interviewer is whether the hasWon function will be called just
+once, or multiple times. If it will be called multiple times, you can get a very fast algorithm
+by amortizing the cost (especially if you can design your own data storage system for the
+tic-tac-toe board).
+Approach #1: If hasWon is called many times
+There are only 3^9, or about twenty thousand tic-tac-toe boards. We can thus represent our
+tic-tac-toe board as an int, with each digit representing a piece (0 means Empty, 1 means
+Red, 2 means Blue). We set up a hashtable or array in advance with all possible boards as
+keys, and the values are 0, 1, and 2. Our function then is simply this:
+int hasWon(int board) {
+	 return winnerHashtable[board];
+}
+Easy!
+Approach #2: If hasWon is only called once
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+enum Piece { Empty, Red, Blue };
+enum Check { Row, Column, Diagonal, ReverseDiagonal }
+
+Piece getIthColor(Piece[][] board, int index, int var, Check check) {
+
+if (check == Check.Row) return board[index][var];
+
+else if (check == Check.Column) return board[var][index];
+
+else if (check == Check.Diagonal) return board[var][var];
+
+else if (check == Check.ReverseDiagonal)
+
+return board[board.length - 1 - var][var];
+
+return Piece.Empty;
+}
+
+Piece getWinner(Piece[][] board, int fixed_index, Check check) {
+
+Piece color = getIthColor(board, fixed_index, 0, check);
+
+if (color == Piece.Empty) return Piece.Empty;
+
+for (int var = 1; var < board.length; var++) {
+
+if (color != getIthColor(board, fixed_index, var, check)) {
+
+return Piece.Empty;
+
+}
+
+}
+
+return color;
+}
+	24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+Piece hasWon(Piece[][] board) {
+
+int N = board.length;
+
+Piece winner = Piece.Empty;
+
+
+// Check rows and columns
+
+for (int i = 0; i < N; i++) {
+
+winner = getWinner(board, i, Check.Row);
+
+if (winner != Piece.Empty) {
+
+return winner;
+
+}
+
+
+winner = getWinner(board, i, Check.Column);
+
+if (winner != Piece.Empty) {
+
+return winner;
+
+}
+
+}
+
+
+winner = getWinner(board, -1, Check.Diagonal);
+
+if (winner != Piece.Empty) {
+
+return winner;
+
+}
+
+
+// Check diagonal
+
+winner = getWinner(board, -1, Check.ReverseDiagonal);
+
+if (winner != Piece.Empty) {
+
+return winner;
+
+}
+
+
+return Piece.Empty;
+}
+SUGGESTIONS AND OBSERVATIONS:
+» » Note that the runtime could be reduced to O(N) with the addition of row and column
+count arrays (and two sums for the diagonals)
+» » A common follow up (or tweak) to this question is to write this code for an NxN board.
