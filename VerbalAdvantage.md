@@ -153,3 +153,7 @@ support
 
 plead for
 
+#Poignant
+Piercing, sharp biting, penetrating
+
+#sly, furtive surreptitious, clandestine
