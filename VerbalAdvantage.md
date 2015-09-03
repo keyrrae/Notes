@@ -147,3 +147,9 @@ sympathetic, kindred, harmonious
 alien
 dissident
 incongruous
+
+# Advocate
+support
+
+plead for
+
