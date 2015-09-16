@@ -17,7 +17,7 @@ $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
 ```
 
-**Settings -> SSH keys -> Add SSH key -> Paste your key into the "Key" field -> Add key**
+**In Github: Settings -> SSH keys -> Add SSH key -> Paste your key into the "Key" field -> Add key**
 
 
 ```Bash
