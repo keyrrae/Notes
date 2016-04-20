@@ -1,8 +1,92 @@
 
+//verify/validate BST
+#include <limits.h>
+bool isBST(struct node* root){
+    return isBSThelper(root, INT_MIN, INT_MAX);
+}
+
+bool isBSThelper(struct node* node, int min, int max){
+    if (node == NULL){
+        return true;
+    }
+    if(node->data <min|| node->data> data){
+        return false;
+    }
+
+    return isBSThelper(node->left, min, node->data - 1) &&
+    isBSThelper(node->right, node->data+1, max);
+}
 
 
-'''c
+//what will be output of trick program and why it is like that...
+//Design malloc.
+
+//What is the difference between process and thread?
+
+
+//How can processes communicate with each other? 
+
+// What's the pure virtue function and how to use it.
+
+// The coding portion was implementing functions of a binary search tree. 
+//The other questions asked by mouth were on things…
+//The questions they ask were straight forward. 
+They first ask some concept questions about different data structure. 
+What is the difference between vector and linked list? 
+And then they asked me what did two functions do(the two functions did the same job and he showed this two on his terminal), which one is faster. The time function was already there, just call it.
+//Remove nodes in a linked list having a particular integer data value.
+//validate binary search tree
+//There are a few questions on the details of C.
+
+/*1' The role of fflush to flush out the strings.
+2' A macro that computes a size_t number. Putting in a loop, it casts -1 to a size_t number, making the loop impossible to start.
+3' Sudoku solver
+4' Design a generic stack class.
+
+Interview
+I handed my resume on College's career fair and got one phone interview. basic of c programming in Linux . I did get the offer. Maybe because I take too many time on the second question(you should know how to use gettimeofday() in c). It not a difficult test. But I messed up.
+
+Interview Questions
+1.remove repeat elements from list
+2.test run time
+*/
+//Verify BST
+//Could you have malloc metadata at the end of your block ? If yes, how could you implement it ?
+//What is the functional difference between these two declarations:
+char * string1="string";
+char string2[]="string";
+
+//Reverse a linked list
+// level order
+// trie
+//Had to write code to find the minimum element in a BST and also find the next largest element from the current node in the BST. Then had to explain what a function did (printed all the elements in the BST in increasing order). Also had to given the time complexities of all these functions.
+If a program is forked.The parent and child have a printf   statement.What will be the order of the printf statements?
+Answer   Add Tags	Flag as Inappropriate
+Interview Answer
+
+2 Answers
+
+▲
+0
+▼
+It will not be in any particular order as the CPU keeps on swapping between the parent and child process.
+
+
 // Check whether linked list has a loop
+int detectloop(struct node *list)
+{
+    struct ListNode *fast,*slow;
+        if(head==NULL) return false;
+        slow=head;
+        fast=head->next;
+        while(fast!=NULL && fast->next!=NULL)
+        {
+            if(slow==fast) return true;
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        return false;
+}
 
 // Valid palindrome
 bool isChar(char *ch)
@@ -101,6 +185,26 @@ int compareVersion(char* v1, char* v2) {
     }
 }
 
+//Binary Search Tree : In order Successor O(h), where h is the height of the tree
+
+struct node* inOrderSuccessor(struct node* root, struct node* n){
+    if(n->right != NULL){
+        return minValue(n->right);
+    }
+
+    struct node *successor = NULL;
+    while(root != NULL){
+        if(n->data < root->data){
+            successor = root;
+            root = root->left;
+        }
+        else if (x->data > root->data){
+            root = root->right;
+        }
+        else break;
+    }
+    return successor;
+}
 
 /* Given a non-empty binary search tree,
 return the minimum data value found in that
@@ -122,12 +226,12 @@ int maxValue(struct node* node){
 
     while(current->right != NULL){
         current = current->right;
-        
+
     }
 
     return (current->data);
 }
-'''
+
 
 # and ## operators
 In function-like macros, a # operator before an identifier in the replacement-list runs the identifier through parameter replacement and encloses the result in quotes, effectively creating a string literal. In addition, the preprocessor adds backslashes to escape the quotes surrounding embedded string literals, if any, and doubles the backslashes within the string as necessary. All leading and trailing whitespace is removed, and any sequence of whitespace in the middle of the text (but not inside embedded string literals) is collapsed to a single space. This operation is called "stringification". If the result of stringification is not a valid string literal, the behavior is undefined.
@@ -209,17 +313,34 @@ bool isPalindrome(char* s) {
     return true;
 }
 
-nterview Questions
-Here is an implementation of a BST. Write a function in C to find the minimum node of the tree.  
+
+Basically, your base class is a struct; derived structs must include the base struct at the first position, so that a pointer to the "derived" struct will also be a valid pointer to the base struct.
+
+typedef struct {
+   data member_x;
+} base;
+
+typedef struct {
+   struct base;
+   data member_y;
+} derived;
+
+void function_on_base(struct base * a); // here I can pass both pointers to derived and to base
+
+void function_on_derived(struct derived * b); // here I must pass a pointer to the derived class
+The functions can be part of the structure as function pointers, so that a syntax like p->call(p) becomes possible, but you still have to explicitly pass a pointer to the struct to the function itself.
+
+Interview Questions
+Here is an implementation of a BST. Write a function in C to find the minimum node of the tree.
 Answer Question
-Write a function to find the next in-order successor of any given node in a BST.  
+Write a function to find the next in-order successor of any given node in a BST.
 Answer Question
-A question about what the main function in C does and why it is important to know the difference between char, char pointer, char array, and a pointer to char pointer.  
+A question about what the main function in C does and why it is important to know the difference between char, char pointer, char array, and a pointer to char pointer.
 
 Print a string and print a string in reverse order?
-In-order traverse a binary search tree.  
+In-order traverse a binary search tree.
 
 Implement a stack in my favorite language
-2) OS and computer systems questions: x86 stack frame, Linux kernel (?)  
+2) OS and computer systems questions: x86 stack frame, Linux kernel (?)
 
 I applied online and had an on-campus interview. It is not very hard though something I cannot answer. What is the difference between process and thread? How can processes communicate with each other? BST find the minimum node. BST find the node with next larger value of a given value.
