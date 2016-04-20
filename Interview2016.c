@@ -22,17 +22,41 @@ bool isBSThelper(struct node* node, int min, int max){
 //Design malloc.
 
 //What is the difference between process and thread?
+/*
+Process: an instance of a program in execution
+separated address space
+cannot access the variables and data structures
 
+thread:exists inside a process
+share the process resource(heap)
+each has its own registers and stack
 
-//How can processes communicate with each other? 
+// context switching
+
+▼
+In operating systems when multiple processes are being run on a single
+processor, and the user or os specifies that it wants to switch processes
+its called a context switch. The old process gets its "state" saved
+in memory and gets push onto a ready queue. When the OS or the user
+is ready to start running it again it gets poped off the ready queue
+and starts running again. Another context switch.
+What is the difference between a mutex and a semaphore?  Which one would you use to protect access to an increment operation?
+
+Both mutexes and semaphores are used to control access to a shared resource – most often in multithreading scenarios.  A mutex is used when only one thread or process is allowed to access a resource and a semaphore is used when only a certain set limit of threads or processes can access the shared resource.  Essentially a mutex is a semaphore where the limit is set to 1.
+
+//How can processes communicate with each other?
+OS allocates a shared memory
+communication pipes in Linux
+process A calls the kernel passing a pointer to a buffer with data to be transferred to process B, process B calls the kernel (or is already blocked on a call to the kernel) passing a pointer to a buffer to be filled with data from process A.
+As you can see the cost of communication is high since it involves at least one context switch.
 
 // What's the pure virtue function and how to use it.
 
-// The coding portion was implementing functions of a binary search tree. 
+// The coding portion was implementing functions of a binary search tree.
 //The other questions asked by mouth were on things…
-//The questions they ask were straight forward. 
-They first ask some concept questions about different data structure. 
-What is the difference between vector and linked list? 
+//The questions they ask were straight forward.
+They first ask some concept questions about different data structure.
+What is the difference between vector and linked list?
 And then they asked me what did two functions do(the two functions did the same job and he showed this two on his terminal), which one is faster. The time function was already there, just call it.
 //Remove nodes in a linked list having a particular integer data value.
 //validate binary search tree
@@ -342,5 +366,3 @@ In-order traverse a binary search tree.
 
 Implement a stack in my favorite language
 2) OS and computer systems questions: x86 stack frame, Linux kernel (?)
-
-I applied online and had an on-campus interview. It is not very hard though something I cannot answer. What is the difference between process and thread? How can processes communicate with each other? BST find the minimum node. BST find the node with next larger value of a given value.
