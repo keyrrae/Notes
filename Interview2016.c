@@ -264,7 +264,16 @@ When # appears before __VA_ARGS__, the entire expanded __VA_ARGS__ is enclosed i
 showlist();            // expands to puts("")
 showlist(1, "x", int); // expands to puts("1, \"x\", int")
 (since C++11)
-A ## operator between any two successive identifiers in the replacement-list runs parameter replacement on the two identifiers (which are not macro-expanded first) and then concatenates the result. This operation is called "concatenation" or "token pasting". Only tokens that form a valid token together may be pasted: identifiers that form a longer identifier, digits that form a number, or operators + and = that form a +=. A comment cannot be created by pasting / and * because comments are removed from text before macro substitution is considered. If the result of concatenation is not a valid token, the behavior is undefined.
+A ## operator between any two successive identifiers in the replacement-list
+runs parameter replacement on the two identifiers (which are not macro-expanded
+  first) and then concatenates the result. This operation is called
+  "concatenation" or "token pasting". Only tokens that form a valid token
+  together may be pasted: identifiers that form a longer identifier, digits
+  that form a number, or operators + and = that form a +=. A comment cannot
+  be created by pasting / and * because comments are removed from text before
+  macro substitution is considered. If the result of concatenation is not a valid token,
+  the behavior is undefined.
+
 Note: some compilers offer an extension that allows ## to appear after a comma and before __VA_ARGS__, in which case the ## does nothing when __VA_ARGS__ is non-empty, but removes the comma when __VA_ARGS__ is empty: this makes it possible to define macros such as fprintf (stderr, format, ##__VA_ARGS__)
 
 
@@ -276,15 +285,18 @@ ssh programming:
 1.2 implement push
 1.3 how to use it for array of stacks.
 2. what's the output of the following program
+
 2.1
 int main() {
 char * s="12345";
 printf("%d\n",s);
 }
 what is the output?
-random
+//random
 
 what is the value in memory of the byte that is pointed by s?
+0x34333231
+
 2.2
 int get() {
 static int n = 0;
@@ -300,7 +312,8 @@ int main() {
 printf ( "%d %d\n", get(), get());
 }
 
-1 2
+
+//1 2
 
 
 
@@ -365,6 +378,12 @@ Print a string and print a string in reverse order?
 In-order traverse a binary search tree.
 
 
+
+Implement a stack in my favorite language
+2) OS and computer systems questions: x86 stack frame, Linux kernel (?)
+
+
+
 #include <stdio.h>
 
 /* Write a quick program to tell me the size of this structure: */
@@ -418,7 +437,7 @@ int main( int argc, char* argv[] ){
 }
 
 ============================================================================
-/* What is the difference between these variables? */                                                           
+/* What is the difference between these variables? */
 
 int i1;
 int j=0;
@@ -429,7 +448,3 @@ int main() {
    static int i2;
    static int k=1;
 }
-
-
-Implement a stack in my favorite language
-2) OS and computer systems questions: x86 stack frame, Linux kernel (?)
