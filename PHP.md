@@ -176,19 +176,18 @@ echo "Have a good day!";
 ```php
 <?php
 $favcolor="red";
-switch ($favcolor)
-{
-case "red":
-echo "Your favorite color is red!";
-break;
-case "blue":
-echo "Your favorite color is blue!";
-break;
-case "green":
-echo "Your favorite color is green!";
-break;
-default:
-echo "Your favorite color is neither red, blue, or green!";
+switch ($favcolor) {
+    case "red":
+        echo "Your favorite color is red!";
+        break;
+    case "blue":
+        echo "Your favorite color is blue!";
+        break;
+    case "green":
+        echo "Your favorite color is green!";
+        break;
+    default:
+        echo "Your favorite color is neither red, blue, or green!";
 }
 ?>
 ```
@@ -200,10 +199,9 @@ echo "Your favorite color is neither red, blue, or green!";
 
 <?php
 $i=1;
-while($i<=5)
-{
-echo "The number is " . $i . "<br>";
-$i++;
+while($i<=5) {  
+    echo "The number is " . $i . "<br>";
+    $i++;
 }
 ?>
 
@@ -216,9 +214,8 @@ $i++;
 <body>
 
 <?php
-for ($i=1; $i<=5; $i++)
-{
-echo "The number is " . $i . "<br>";
+for ($i=1; $i<=5; $i++) {
+    echo "The number is " . $i . "<br>";
 }
 ?>
 
