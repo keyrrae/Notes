@@ -9,3 +9,7 @@ git commit -am "init"
 git push heroku master
 heroku open
 heroku logs --tail
+heroku ps:scale web=1
+heroku logs --tail
+git remote rm heroku
+heroku git:remote -a newname 
